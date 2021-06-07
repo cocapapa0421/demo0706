@@ -18,8 +18,8 @@
   }
 
   @include media(">1270px") {
-    padding-right: px(10);
-    padding-left: px(10);
+    margin-right: px(10);
+    margin-left: px(10);
   }
 }
 
@@ -36,23 +36,23 @@
 }
 
 .section--rounded {
-  border-radius: px(15);
+  border-radius: 5px;
 
-  @include media(">phone") {
-    border-radius: 2rem;
+  @include media(">=tablet") {
+    border-radius: px(10);
   }
 
-  @include media(">tablet") {
-    border-radius: 3rem;
-  }
-
-  @include media(">desktop") {
-    border-radius: 4rem;
+  @include media(">=desktop") {
+    border-radius: px(15);
   }
 
   @include media(">1270px") {
-    border-radius: 5rem;
+    border-radius: px(50);
   }
+}
+
+.section--background-1 {
+  background-color: $light-pink;
 }
 
 .section__head {
