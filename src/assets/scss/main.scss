@@ -1,42 +1,19 @@
 // 1. Libraries
-@import "./lib/lib";
+@import "./lib/**/*.scss";
 
 // 2. Abstracts
-@import "./abstracts/variables";
-@import "./abstracts/functions";
-@import "./abstracts/mixins";
+@import "./abstracts/**/*.scss";
 
 // 3. Base
-@import "./base/utilities";
-@import "./base/base";
-@import "./base/typography";
+@import "./base/**/*.scss";
 
 // 4. Layouts
-@import "./layouts/layouts";
-@import "./layouts/grid";
+@import "./layouts/**/*.scss";
 
 // 5. Objects
-@import "./objects/button";
-@import "./objects/socials";
-@import "./objects/sub-menu";
-@import "./objects/views";
-@import "./objects/heading";
+@import "./objects/**/*.scss";
 
 // 6. Components
-@import "./components/section";
-@import "./components/header";
-@import "./components/menu";
-@import "./components/search";
-@import "./components/switch";
-@import "./components/card";
-@import "./components/category";
-@import "./components/subscribe";
-@import "./components/tabs_content";
-@import "./components/tab";
-@import "./components/post-secondary";
-@import "./components/post-senary";
-@import "./components/post-septenary";
-@import "./components/panel";
-@import "./components/footer";
+@import "./components/**/*.scss";
 
 // 7. Pages

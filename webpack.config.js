@@ -38,6 +38,10 @@ module.exports = {
         ],
       },
       {
+        test: /\.scss$/,
+        use: "webpack-import-glob-loader",
+      },
+      {
         test: /\.html$/i,
         use: ["html-loader"],
       },
