@@ -14,7 +14,7 @@ block content
         div.col-desk-3.col-tab-6.col-mob-12
           +link()(class="c-card")
             .c-card__order 01
-            .c-card__title.u-truncate-text-2 We denounce with righteous indignation
+            h3.c-card__title.u-truncate-text-2 We denounce with righteous indignation
             div.o-views
               span
                 i.las.la-arrow-up
@@ -25,7 +25,7 @@ block content
         div.col-desk-3.col-tab-6.col-mob-12
           +link()(class="c-card")
             .c-card__order 02
-            .c-card__title.u-truncate-text-2 Denouncing pleasure and praising pain was born
+            h3.c-card__title.u-truncate-text-2 Denouncing pleasure and praising pain was born
             div.o-views
               span
                 i.las.la-arrow-up
@@ -36,7 +36,7 @@ block content
         div.col-desk-3.col-tab-6.col-mob-12
           +link()(class="c-card")
             .c-card__order 03
-            .c-card__title.u-truncate-text-2 At vero eos et accusamus et iusto odio dignissimos...
+            h3.c-card__title.u-truncate-text-2 At vero eos et accusamus et iusto odio dignissimos...
             div.o-views
               span
                 i.las.la-arrow-up
@@ -47,7 +47,7 @@ block content
         div.col-desk-3.col-tab-6.col-mob-12
           +link()(class="c-card")
             .c-card__order 04
-            .c-card__title.u-truncate-text-2 Nam libero tempore, cum soluta nobis est eligendi
+            h3.c-card__title.u-truncate-text-2 Nam libero tempore, cum soluta nobis est eligendi
             div.o-views
               span
                 i.las.la-arrow-up
@@ -56,18 +56,44 @@ block content
                 i.las.la-comment
                 | 2 Comments
 
+  section.section.section-background--2.section--rounded
+    .l-container
+      .c-slider
+        .c-slider__content
+          +link().c-slider__category.u-text-medium Chic Style
+          h3.c-slider__title Torquem Detraxit Hosti Quidem Se Repellere
+          .c-slider__meta.u-flex.u-flex-middle
+            .c-slider__author
+              +img('../assets/images/thumb1.jpg').u-img-cover
+            .c-slider__name
+              span By
+              span.u-text-bold Wiloke
+            span •
+            span.u-text-bold 25th November, 2020
+          .c-slider__navigation.u-flex.u-flex-middle
+            button.o-button.o-button--size-l.o-button--circle
+              i.las.la-angle-left
+
+            button.o-button.o-button--size-l.o-button--circle.u-ml-10
+              i.las.la-angle-right
+
+        .c-slider__thumb
+          .c-slider__thumb-inner
+            +img('../assets/images/slider.jpg').c-slider__img.u-img-cover
+
+
   section.section
     .l-container
       .section__head
         h2.o-heading
           +link()(class="o-heading__link") Category
 
-      .grid
+      .grid.grid-desk-huge
         .col-desk-3.col-tab-6.col-mob-12
           +link()(class="c-category")
             .c-category__thumb
               img.c-category__img.u-img-cover(src="../assets/images/post1.jpg", alt="Apps")
-            div.c-category__info.uk-flex-space-between
+            .c-category__info.u-flex.u-flex-between.u-flex-middle
               span.c-category__title Apps
               div.c-category__counts
                 span 23 posts
@@ -79,7 +105,7 @@ block content
             +link()(class="c-category")
               .c-category__thumb
                 img.c-category__img.u-img-cover(src="../assets/images/post2.jpg", alt="Boxing")
-              div.c-category__info.uk-flex-space-between
+              div.c-category__info.u-flex.u-flex-between.u-flex-middle
                 span.c-category__title Boxing
                 div.c-category__counts
                   span 23 posts
@@ -91,7 +117,7 @@ block content
           +link()(class="c-category")
             .c-category__thumb
               img.c-category__img.u-img-cover(src="../assets/images/post3.jpg", alt="Bohemian")
-            div.c-category__info.uk-flex-space-between
+            div.c-category__info.u-flex.u-flex-between.u-flex-middle
               span.c-category__title Bohemian
               div.c-category__counts
                 span 23 posts
@@ -103,7 +129,7 @@ block content
           +link()(class="c-category")
             .c-category__thumb
               img.c-category__img.u-img-cover(src="../assets/images/post4.jpg", alt="Artsy Style")
-            div.c-category__info.uk-flex-space-between
+            div.c-category__info.u-flex.u-flex-between.u-flex-middle
               span.c-category__title Artsy Style
               div.c-category__counts
                 span 23 posts
@@ -135,7 +161,7 @@ block content
                     .c-post-primary__author
                       +img('../assets/images/thumb22.jpg').u-img-cover
                     span.u-ml-10.u-text-medium Della Case
-                    div.o-views.u-ml-auto
+                    .o-views.u-ml-auto
                       span
                         i.las.la-arrow-up
                         | 4k3
@@ -155,7 +181,7 @@ block content
                     .c-post-primary__author
                       +img('../assets/images/thumb23.jpg').u-img-cover
                     span.u-ml-10.u-text-medium Della Case
-                    div.o-views.u-ml-auto
+                    .o-views.u-ml-auto
                       span
                         i.las.la-arrow-up
                         | 4k3
@@ -175,7 +201,7 @@ block content
                     .c-post-primary__author
                       +img('../assets/images/thumb14.jpg').u-img-cover
                     span.u-ml-10.u-text-medium Della Case
-                    div.o-views.u-ml-auto
+                    .o-views.u-ml-auto
                       span
                         i.las.la-arrow-up
                         | 4k3
@@ -186,7 +212,6 @@ block content
                   .c-post-primary__time.u-flex.u-flex-middle.u-flex-between
                     span.s3.u-text-medium 16th October, 2019
                     i.las.la-bookmark.t5.c-post-primary__icon
-
 
         .col-mob-12.col-tab-12.col-desk-6.u-order-tab-1.u-mb-tab-10
           .grid.grid-desk-huge
@@ -247,7 +272,7 @@ block content
                     .c-post-primary__author
                       +img('../assets/images/thumb24.jpg').u-img-cover
                     span.u-ml-10.u-text-medium Della Case
-                    div.o-views.u-ml-auto
+                    .o-views.u-ml-auto
                       span
                         i.las.la-arrow-up
                         | 4k3
@@ -267,7 +292,7 @@ block content
                     .c-post-primary__author
                       +img('../assets/images/thumb25.jpg').u-img-cover
                     span.u-ml-10.u-text-medium Della Case
-                    div.o-views.u-ml-auto
+                    .o-views.u-ml-auto
                       span
                         i.las.la-arrow-up
                         | 4k3
@@ -287,7 +312,7 @@ block content
                     .c-post-primary__author
                       +img('../assets/images/thumb26.jpg').u-img-cover
                     span.u-ml-10.u-text-medium Della Case
-                    div.o-views.u-ml-auto
+                    .o-views.u-ml-auto
                       span
                         i.las.la-arrow-up
                         | 4k3
@@ -501,8 +526,19 @@ block content
                         i.las.la-comment
                         | 2 Comments
 
-
-
+  // Background
+  .home-overlay
+  .home-half-circle
+  .home-polygon
+    <svg width="380" height="390" viewBox="0 0 380 390" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M119.145 64.8712C163.163 22.0311 319.517 106.62 328.217 187.787C336.917 268.955 207.966 401.15 152.145 359.148C96.324 317.146 75.1269 107.711 119.145 64.8712Z" fill="url(#paint0_linear)"/>
+      <defs>
+      <linearGradient id="paint0_linear" x1="0.362579" y1="147.51" x2="170.141" y2="389.979" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6835D0"/>
+      <stop offset="1" stop-color="#59F0FF"/>
+      </linearGradient>
+      </defs>
+    </svg>
 
 
 

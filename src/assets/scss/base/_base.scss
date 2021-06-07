@@ -20,11 +20,13 @@ html {
 }
 
 body {
+  position: relative;
   color: $primary-color;
   font-size: px($fz-base);
   font-family: $font-primary;
   font-weight: $fw-regular;
   line-height: $lh-base;
+  overflow-x: hidden;
 }
 
 ol[class],
