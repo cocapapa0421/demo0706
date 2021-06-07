@@ -1,0 +1,15 @@
+@function getSizeImage($height, $width) {
+  @return ($height / $width) * 100%;
+}
+
+@function col-width($i, $columns) {
+  @return 100% / $columns * $i;
+}
+
+@function px($pixel) {
+  @return #{$pixel / 10}rem;
+}
+
+@function setMaxHeightText($line) {
+  @return ($fz-base * $lh-base * $line) * 1px;
+}

@@ -1,0 +1,60 @@
+.section {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  @include media(">phone") {
+    padding-top: px(20);
+    padding-bottom: px(20);
+  }
+
+  @include media(">tablet") {
+    padding-top: px(30);
+    padding-bottom: px(30);
+  }
+
+  @include media(">desktop") {
+    padding-top: px(50);
+    padding-bottom: px(50);
+  }
+
+  @include media(">1270px") {
+    padding-right: px(10);
+    padding-left: px(10);
+  }
+}
+
+.section--collapse {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.section--medium {
+  @include media(">=#{$container}") {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+.section--rounded {
+  border-radius: px(15);
+
+  @include media(">phone") {
+    border-radius: 2rem;
+  }
+
+  @include media(">tablet") {
+    border-radius: 3rem;
+  }
+
+  @include media(">desktop") {
+    border-radius: 4rem;
+  }
+
+  @include media(">1270px") {
+    border-radius: 5rem;
+  }
+}
+
+.section__head {
+  margin-bottom: px(20);
+}

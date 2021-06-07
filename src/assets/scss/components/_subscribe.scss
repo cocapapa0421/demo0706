@@ -1,0 +1,69 @@
+.c-subscribe {
+  padding: 10px 10px;
+  background-color: $primary-color-light-2;
+  border-radius: 5px;
+  color: $secondary-color;
+
+  @include media(">=tablet") {
+    padding: px(15) px(15);
+    border-radius: px(10);
+  }
+
+  @include media(">=#{$container}") {
+    padding: px(30) px(30);
+    border-radius: px(30);
+  }
+}
+
+.c-subscribe__img {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+
+  @include media(">=tablet") {
+    margin-top: px(20);
+    margin-bottom: px(20);
+  }
+
+  @include media(">=#{$container}") {
+    margin-top: px(30);
+    margin-bottom: px(30);
+  }
+}
+
+.c-subscribe__row + .c-subscribe__row {
+  margin-top: 10px;
+  @include media(">=#{$container}") {
+    margin-top: px(20);
+  }
+}
+
+.c-subscribe__input-wrapper {
+  padding: px(15) px(20);
+  border: 2px solid rgba($color-white, 0.2);
+  border-radius: px(28);
+  line-height: px(26);
+}
+
+.c-subscribe__input {
+  flex: 1;
+}
+
+.c-subscribe__icon {
+  font-size: px(22);
+  font-weight: $fw-regular;
+}
+
+.c-subscribe__input::placeholder {
+  color: $color-gray-2;
+}
+
+.c-subscribe__button {
+  display: block;
+  width: 100%;
+  padding: px(15) px(15);
+  border-radius: px(28);
+  color: $primary-color;
+  font-weight: $fw-bold;
+  line-height: px(26);
+}

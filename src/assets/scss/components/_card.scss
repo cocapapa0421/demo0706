@@ -1,0 +1,35 @@
+.c-card {
+  @include flex;
+  @include flex-fluid($direction: column);
+  padding: px(10) px(10);
+  height: 100%;
+  border: 2px solid $color-gray-4;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: $primary-color;
+
+  @include media(">=tablet") {
+    padding: px(15) px(15);
+    border-radius: px(15);
+  }
+
+  @include media(">=1270px") {
+    padding: px(20) px(30);
+    border-radius: px(30);
+  }
+}
+
+.c-card__order {
+  margin-bottom: 1rem;
+  color: $color-gray-2;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 31px;
+}
+
+.c-card__title {
+  margin-bottom: 1rem;
+  max-height: setMaxHeightText(2);
+  flex: 1;
+  font-weight: $fw-bold;
+}

@@ -1,0 +1,38 @@
+.c-menu {
+  @include media(">=desktop") {
+    margin-left: px(175);
+    font-weight: $fw-medium;
+    font-size: px(14);
+    line-height: px(26);
+  }
+}
+
+.c-menu__list {
+  @include media(">=desktop") {
+    @include flex-center(center);
+  }
+}
+
+.c-menu__item {
+  position: relative;
+}
+
+.c-menu__link {
+  @include media(">=desktop") {
+    display: inline-block;
+    padding: px(9) px(24);
+    border-radius: px(22);
+  }
+}
+.c-menu__icon {
+  margin-left: px(1);
+}
+
+.c-menu__link--active,
+.c-menu__item:hover .c-menu__link {
+  background-color: $secondary-color;
+}
+
+.c-menu__item.has-submenu:hover .o-sub-menu {
+  display: block;
+}

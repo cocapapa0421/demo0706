@@ -1,0 +1,63 @@
+//- Master layout
+include ../partials/_mixins
+
+doctype html
+html(lang='en')
+  head
+
+    //- Meta
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+
+    meta(name='msapplication-TileColor', content='#0E0E0E')
+    meta(name='them-color', content='#0E0E0E')
+
+    //- SEO
+
+    //- Basic Seo
+    block basicSeo
+      meta(name='description', content='Index page')
+      meta(name='keywords', content='index, page')
+      meta(name='author', content='')
+      link(rel='canonical', href='')
+
+    //- Robots
+    meta(name='googlebot', content='noarchive')
+    meta(name='robots', content='noarchive')
+
+
+    //- Facebook
+    meta(property='og:url', content='')
+    meta(property='og:title', content='')
+    meta(property='og:description', content='')
+    meta(property='og:image', content='')
+    meta(property='og:type', content='website')
+
+    //- Favicons
+    link(rel='apple-touch-icon', sizes='180x180', href='')
+    link(rel='icon', type='image/png', sizes='32x32', href='')
+    link(rel='icon', type='image/png', sizes='16x16', href='')
+    link(rel='shortcut icon', href='')
+
+    block stylesheet
+
+    //- Title
+    block title
+      title Your project!
+
+  body
+
+    //- block header
+    block header
+      include ../components/_header.pug
+
+    main#root
+      //- block content
+      block content
+
+    //- Footer
+    include ../components/_footer.pug
+
+    //- block scripts
+    block scripts

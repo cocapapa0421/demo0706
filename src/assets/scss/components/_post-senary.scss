@@ -1,0 +1,50 @@
+.c-post-senary {
+  @include flex-center(center);
+  padding: 10px 10px;
+  background-color: rgba($color-white, 0.05);
+  backdrop-filter: blur(27px);
+  border-radius: 5px;
+
+  @include media(">phone") {
+    border-radius: 10px;
+  }
+
+  @include media(">=1270px") {
+    padding: px(20) px(20);
+    border-radius: px(30);
+  }
+
+  @include media(">=tablet", "<desktop") {
+    position: relative;
+    flex-direction: column;
+    margin-top: 40px;
+    padding: 40px 10px 10px;
+  }
+}
+
+.c-post-senary__thumb {
+  width: px(80);
+  height: px(80);
+  border-radius: 50%;
+  overflow: hidden;
+
+  @include media(">=tablet", "<desktop") {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 3px solid $color-white;
+  }
+}
+
+.c-post-senary__info {
+  @media only screen and (max-width: 767px), (min-width: 1024px) {
+    width: calc(100% - 8rem);
+    padding-left: px(15);
+  }
+}
+
+.c-post-senary__title {
+  margin-bottom: px(10);
+  max-height: px(40);
+}

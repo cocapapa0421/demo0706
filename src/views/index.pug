@@ -1,0 +1,322 @@
+extend ./layouts/_master.pug
+
+block title
+  title Demo
+block stylesheet
+  link(rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css")
+  link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap")
+
+
+block content
+  section.section
+    .l-container
+      div.grid.grid-desk-huge
+        div.col-desk-3.col-tab-6.col-mob-12
+          +link()(class="c-card")
+            .c-card__order 01
+            .c-card__title.u-truncate-text-2 We denounce with righteous indignation
+            div.o-views
+              span
+                i.las.la-arrow-up
+                | 240 Views
+              span
+                i.las.la-comment
+                | 2 Comments
+        div.col-desk-3.col-tab-6.col-mob-12
+          +link()(class="c-card")
+            .c-card__order 02
+            .c-card__title.u-truncate-text-2 Denouncing pleasure and praising pain was born
+            div.o-views
+              span
+                i.las.la-arrow-up
+                | 240 Views
+              span
+                i.las.la-comment
+                | 2 Comments
+        div.col-desk-3.col-tab-6.col-mob-12
+          +link()(class="c-card")
+            .c-card__order 03
+            .c-card__title.u-truncate-text-2 At vero eos et accusamus et iusto odio dignissimos...
+            div.o-views
+              span
+                i.las.la-arrow-up
+                | 240 Views
+              span
+                i.las.la-comment
+                | 2 Comments
+        div.col-desk-3.col-tab-6.col-mob-12
+          +link()(class="c-card")
+            .c-card__order 04
+            .c-card__title.u-truncate-text-2 Nam libero tempore, cum soluta nobis est eligendi
+            div.o-views
+              span
+                i.las.la-arrow-up
+                | 240 Views
+              span
+                i.las.la-comment
+                | 2 Comments
+
+  section.section
+    .l-container
+      .section__head
+        h2.o-heading
+          +link()(class="o-heading__link") Category
+
+      .grid
+        .col-desk-3.col-tab-6.col-mob-12
+          +link()(class="c-category")
+            .c-category__thumb
+              img.c-category__img.u-img-cover(src="../assets/images/post1.jpg", alt="Apps")
+            div.c-category__info.uk-flex-space-between
+              span.c-category__title Apps
+              div.c-category__counts
+                span 23 posts
+                div.c-category__posts
+                  +img('../assets/images/thumb2.jpg')
+                  +img('../assets/images/thumb3.jpg')
+                  +img('../assets/images/thumb4.jpg')
+        .col-desk-3.col-tab-6.col-mob-12
+            +link()(class="c-category")
+              .c-category__thumb
+                img.c-category__img.u-img-cover(src="../assets/images/post2.jpg", alt="Boxing")
+              div.c-category__info.uk-flex-space-between
+                span.c-category__title Boxing
+                div.c-category__counts
+                  span 23 posts
+                  div.c-category__posts
+                    +img('../assets/images/thumb5.jpg')
+                    +img('../assets/images/thumb6.jpg')
+                    +img('../assets/images/thumb7.jpg')
+        .col-desk-3.col-tab-6.col-mob-12
+          +link()(class="c-category")
+            .c-category__thumb
+              img.c-category__img.u-img-cover(src="../assets/images/post3.jpg", alt="Bohemian")
+            div.c-category__info.uk-flex-space-between
+              span.c-category__title Bohemian
+              div.c-category__counts
+                span 23 posts
+                div.c-category__posts
+                  +img('../assets/images/thumb8.jpg')
+                  +img('../assets/images/thumb9.jpg')
+                  +img('../assets/images/thumb10.jpg')
+        .col-desk-3.col-tab-6.col-mob-12
+          +link()(class="c-category")
+            .c-category__thumb
+              img.c-category__img.u-img-cover(src="../assets/images/post4.jpg", alt="Artsy Style")
+            div.c-category__info.uk-flex-space-between
+              span.c-category__title Artsy Style
+              div.c-category__counts
+                span 23 posts
+                div.c-category__posts
+                  +img('../assets/images/thumb11.jpg')
+                  +img('../assets/images/thumb12.jpg')
+                  +img('../assets/images/thumb13.jpg')
+
+  section.section
+    .l-container
+      .section__head
+        h2.o-heading
+          +link()(class="o-heading__link") With Category
+
+      .grid.grid-desk-huge
+        .col-mob-12.col-tab-12.col-desk-8
+          .grid.grid-desk-huge
+            .col-mob-12.col-tab-6.col-desk-6
+              +link().c-post-secondary
+                .c-post-secondary__thumb
+                  +img('../assets/images/post23.jpg').u-img-cover
+                span.c-post-secondary__category Design
+                .c-post-secondary__info
+                  .u-flex.u-flex-between.u-flex-middle
+                    h3.c-post-secondary__title.u-truncate-text-2 Hanc ego assentior, cum soluta nobis est primum igitur
+                    span.c-post-secondary__save
+                      i.las.la-bookmark
+                  .c-post-secondary__meta.u-flex.u-flex-middle
+                    .c-post-secondary__author
+                      +img(src='../assets/images/thumb14.jpg')
+                    span By #[strong Wiloke]
+                    span •
+                    span 25th November, 2020
+            .col-mob-12.col-tab-6.col-desk-6
+              +link().c-post-secondary
+                .c-post-secondary__thumb
+                  +img('../assets/images/post24.jpg').u-img-cover
+                span.c-post-secondary__category Travel
+                .c-post-secondary__info
+                  .u-flex.u-flex-between.u-flex-middle
+                    h3.c-post-secondary__title.u-truncate-text-2 Quid ex ea quid bonum sit aut quid sit aut in animis nostris.
+                    span.c-post-secondary__save
+                      i.las.la-bookmark
+                  .c-post-secondary__meta.u-flex.u-flex-middle
+                    .c-post-secondary__author
+                      +img(src='../assets/images/thumb15.jpg').u-img-cover
+                    span By #[strong Wiloke]
+                    span •
+                    span 25th November, 2020
+            .col-mob-12.col-tab-6.col-desk-6
+              +link().c-post-secondary
+                .c-post-secondary__thumb
+                  +img('../assets/images/post25.jpg').u-img-cover
+                span.c-post-secondary__category Music
+                .c-post-secondary__info
+                  .u-flex.u-flex-between.u-flex-middle
+                    h3.c-post-secondary__title.u-truncate-text-2 Filium morte multavit si sine causa, mox videro
+                    span.c-post-secondary__save
+                      i.las.la-bookmark
+                  .c-post-secondary__meta.u-flex.u-flex-middle
+                    .c-post-secondary__author
+                      +img(src='../assets/images/thumb16.jpg').u-img-cover
+                    span By #[strong Wiloke]
+                    span •
+                    span 25th November, 2020
+            .col-mob-12.col-tab-6.col-desk-6
+              +link().c-post-secondary
+                .c-post-secondary__thumb
+                  +img('../assets/images/post27.jpg').u-img-cover
+                span.c-post-secondary__category Nature
+                .c-post-secondary__info
+                  .u-flex.u-flex-between.u-flex-middle
+                    h3.c-post-secondary__title.u-truncate-text-2 Certe, inquam, pertinax non ero tibique, si ob aliquam
+                    span.c-post-secondary__save
+                      i.las.la-bookmark
+                  .c-post-secondary__meta.u-flex.u-flex-middle
+                    .c-post-secondary__author
+                      +img(src='../assets/images/thumb17.jpg').u-img-cover
+                    span By #[strong Wiloke]
+                    span •
+                    span 25th November, 2020
+            .col-mob-12.col-tab-6.col-desk-6
+              +link().c-post-secondary
+                .c-post-secondary__thumb
+                  +img('../assets/images/post28.jpg').u-img-cover
+                span.c-post-secondary__category Game
+                .c-post-secondary__info
+                  .u-flex.u-flex-between.u-flex-middle
+                    h3.c-post-secondary__title.u-truncate-text-2 Neural networks can now help you colorize old photos like a pro
+                    span.c-post-secondary__save
+                      i.las.la-bookmark
+                  .c-post-secondary__meta.u-flex.u-flex-middle
+                    .c-post-secondary__author
+                      +img(src='../assets/images/thumb18.jpg').u-img-cover
+                    span By #[strong Wiloke]
+                    span •
+                    span 25th November, 2020
+            .col-mob-12.col-tab-6.col-desk-6
+              +link().c-post-secondary
+                .c-post-secondary__thumb
+                  +img('../assets/images/post29.jpg').u-img-cover
+                span.c-post-secondary__category Tech
+                .c-post-secondary__info
+                  .u-flex.u-flex-between.u-flex-middle
+                    h3.c-post-secondary__title.u-truncate-text-2 All the best headphones for working at home in 2020
+                    span.c-post-secondary__save
+                      i.las.la-bookmark
+                  .c-post-secondary__meta.u-flex.u-flex-middle
+                    .c-post-secondary__author
+                      +img(src='../assets/images/thumb19.jpg').u-img-cover
+                    span By #[strong Wiloke]
+                    span •
+                    span 25th November, 2020
+            .col-mob-12.col-tab-6.col-desk-6
+              +link().c-post-secondary
+                .c-post-secondary__thumb
+                  +img('../assets/images/post30.jpg').u-img-cover
+                span.c-post-secondary__category Art Design
+                .c-post-secondary__info
+                  .u-flex.u-flex-between.u-flex-middle
+                    h3.c-post-secondary__title.u-truncate-text-2 Chinese vertical dramas made for phone viewing show
+                    span.c-post-secondary__save
+                      i.las.la-bookmark
+                  .c-post-secondary__meta.u-flex.u-flex-middle
+                    .c-post-secondary__author
+                      +img(src='../assets/images/thumb20.jpg').u-img-cover
+                    span By #[strong Wiloke]
+                    span •
+                    span 25th November, 2020
+            .col-mob-12.col-tab-6.col-desk-6
+              +link().c-post-secondary
+                .c-post-secondary__thumb
+                  +img('../assets/images/post31.jpg').u-img-cover
+                span.c-post-secondary__category Photography
+                .c-post-secondary__info
+                  .u-flex.u-flex-between.u-flex-middle
+                    h3.c-post-secondary__title.u-truncate-text-2 Instagram is testing a feature to clean up your pity follows
+                    span.c-post-secondary__save
+                      i.las.la-bookmark
+                  .c-post-secondary__meta.u-flex.u-flex-middle
+                    .c-post-secondary__author
+                      +img(src='../assets/images/thumb21.jpg').u-img-cover
+                    span By #[strong Wiloke]
+                    span •
+                    span 25th November, 2020
+
+
+
+        .col-mob-12.col-tab-12.col-desk-4.u-visible-desk
+          form.c-subscribe
+            h3.c-subscribe__heading.o-heading.o-heading--size-m
+              |  Subscribe To Your  Newsletters
+            .c-subscribe__img
+              +img(src='../assets/images/couple.svg')
+
+            div.c-subscribe__row
+              div.c-subscribe__input-wrapper.u-flex.u-flex-between.u-flex-middle
+                input.c-subscribe__input(type="text" name="" placeholder="Enter your email address")
+                i.c-subscribe__icon.las.la-envelope
+            div.c-subscribe__row
+              button.c-subscribe__button.o-button.o-button--primary(type="submit") Join now
+
+          .c-tabs-content
+            .c-tabs-content__head
+              .c-tab.u-flex.u-flex-between.u-flex-middle
+                button.c-tab__item.c-tab__item--active.o-button Viewed
+                button.c-tab__item.o-button Popular
+                button.c-tab__item.o-button Trending
+
+            .c-tabs-content__body
+              .c-tabs-content__item
+                +link().c-post-septenary.u-flex.u-flex-middle.u-flex-between
+                  .c-post-septenary__thumb
+                    +img('../assets/images/post35.jpg').u-img-cover
+                  .c-post-septenary__info
+                    h4.c-post-septenary__title.u-truncate-text-2 Sorry, but you can’t copyright a meme
+                    div.o-views
+                      span
+                        i.las.la-arrow-up
+                        | 240 Views
+                      span
+                        i.las.la-comment
+                        | 2 Comments
+              .c-tabs-content__item
+                +link().c-post-septenary.u-flex.u-flex-middle.u-flex-between
+                  .c-post-septenary__thumb
+                    +img('../assets/images/post36.jpg').u-img-cover
+                  .c-post-septenary__info
+                    h4.c-post-septenary__title.u-truncate-text-2 Neural networks can now help you colorize old photos
+                    div.o-views
+                      span
+                        i.las.la-arrow-up
+                        | 240 Views
+                      span
+                        i.las.la-comment
+                        | 2 Comments
+              .c-tabs-content__item
+                +link().c-post-septenary.u-flex.u-flex-middle.u-flex-between
+                  .c-post-septenary__thumb
+                    +img('../assets/images/post37.jpg').u-img-cover
+                  .c-post-septenary__info
+                    h4.c-post-septenary__title.u-truncate-text-2 9 design ideas for the future of digital dating
+                    div.o-views
+                      span
+                        i.las.la-arrow-up
+                        | 240 Views
+                      span
+                        i.las.la-comment
+                        | 2 Comments
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+.c-post-septenary__thumb {
+  @include size(px(80));
+  border-radius: px(22);
+  overflow: hidden;
+}
+
+.c-post-septenary__info {
+  width: calc(100% - 8rem);
+  padding-left: px(15);
+}
+
+.c-post-septenary__title {
+  margin-bottom: px(10);
+  max-height: px(42);
+  font-weight: $fw-bold;
+  text-decoration: underline;
+}

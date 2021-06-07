@@ -1,0 +1,15 @@
+.o-views {
+  @include flex-center(center);
+  color: $primary-color-light-2;
+  font-size: px(13);
+  font-weight: 500;
+  line-height: px(16);
+}
+
+.o-views--gray {
+  color: $color-gray-3;
+}
+
+.o-views > *:not(:first-child) {
+  margin-left: px(15);
+}

@@ -1,0 +1,51 @@
+// Colors
+$primary-color: #1b113e;
+$primary-color-light-1: #3d3753;
+$primary-color-light-2: #281c55;
+$secondary-color: #ffdcbe;
+
+$dark-green: #311695;
+
+$light-green: #8dffd2;
+$light-orange: #f57171;
+
+$color-gray-1: #7b778d;
+$color-gray-2: #bdbbc4;
+$color-gray-3: #dbdade;
+$color-gray-4: #ecebee;
+$color-gray-5: #f0f0f2;
+
+$color-white: #fff;
+
+$color-facebook: #3b5998;
+$color-youtube: #e62117;
+$color-twitter: #08a0e9;
+
+// Container
+$container: 1270px;
+
+// Font
+$font-primary: "DM Sans", sans-serif;
+$fw-bold: 700;
+$fw-medium: 500;
+$fw-regular: 400;
+$fz-base: 16;
+$lh-base: 20.83 / 16;
+
+// Breakpoints
+$breakpoints: (
+  "phone": 320px,
+  "tablet": 768px,
+  "desktop": 1024px,
+);
+
+// Grids
+$grid-columns: (
+  "desk": 12,
+  "tab": 12,
+  "mob": 12,
+);
+
+$grid-gutter-mobile: 10px;
+$grid-gutter-tablet: 10px;
+$grid-gutter-desktop: 15px;

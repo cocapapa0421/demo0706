@@ -1,0 +1,54 @@
+.c-footer {
+  padding-top: px(15);
+  padding-bottom: px(15);
+  background-image: url("../../images/bg-footer.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+  color: $color-white;
+
+  @include media(">=1270px") {
+    padding: px(50) 0 px(20);
+    background-position: 100% 100%;
+  }
+}
+
+.c-footer__posts,
+.c-footer__navigation,
+.c-footer__copyright {
+  @include media(">#{$container}") {
+    padding-right: px(10);
+    padding-left: px(10);
+  }
+}
+
+.c-footer__navigation {
+  padding-top: px(15);
+  padding-bottom: px(15);
+
+  @include media(">=tablet") {
+    padding-top: px(20);
+    padding-bottom: px(20);
+  }
+
+  @include media(">=desktop") {
+    padding-top: px(30);
+    padding-bottom: px(30);
+  }
+
+  @include media(">=#{$container}") {
+    padding-top: px(60);
+    padding-bottom: px(60);
+  }
+}
+
+.c-footer__copyright {
+  color: $color-gray-2;
+  p {
+    @include media(">=#{$container}") {
+      margin: 0 auto;
+      max-width: 40%;
+      font-size: px(16);
+      line-height: px(26);
+    }
+  }
+}

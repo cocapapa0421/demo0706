@@ -1,0 +1,23 @@
+.c-search {
+  @include flex-center(center, space-between);
+  @include media(">=desktop") {
+    width: 253px;
+    padding: 4px 4px 4px 13px;
+    border: 2px solid $color-gray-4;
+    border-radius: 28px;
+    font-size: 14px;
+    line-height: 1;
+  }
+}
+
+.c-search__input {
+  @include media(">=desktop") {
+    padding-right: 1rem;
+    flex: 1;
+  }
+}
+
+.c-search__input::placeholder {
+  color: $primary-color-light-1;
+  font-size: 1.3rem;
+}
