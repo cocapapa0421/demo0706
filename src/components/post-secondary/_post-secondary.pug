@@ -1,0 +1,7 @@
+mixin post-secondary(props = {})
+  +component('article', 'post-secondary')
+    +link().post-secondary__category=props.category || random(api.post.categories)
+    div.post-secondary__thumb.aspect-ratio
+      +img(src=props.thumb || random(api.post.thumb)).img-cover
+    div.post-secondary__info
+      h3.post-secondary__title

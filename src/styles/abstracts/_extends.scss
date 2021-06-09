@@ -1,0 +1,47 @@
+// Absolute
+%absolute-center {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+%absolute-center-transform {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Truncate text
+%truncate-text {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+}
+
+// Flex
+%flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+%flex-middle {
+  display: flex;
+  align-items: center;
+}
+
+%flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%flex-between-middle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

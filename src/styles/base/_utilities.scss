@@ -1,0 +1,155 @@
+.flex {
+  @include flex;
+}
+
+.flex-inline {
+  @include flex(inline-flex);
+}
+
+.flex-left {
+  justify-content: flex-start;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.flex-right {
+  justify-content: flex-end;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+.flex-around {
+  justify-content: space-around;
+}
+
+.flex-evenly {
+  justify-content: space-evenly;
+}
+
+.flex-stretch {
+  align-items: stretch;
+}
+
+.flex-middle {
+  align-items: center;
+}
+
+.flex-top {
+  align-items: flex-start;
+}
+
+.flex-bottom {
+  align-items: flex-end;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.hidden {
+  display: none;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.visible-desktop {
+  display: block;
+}
+
+.hidden-desktop {
+  display: none;
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+
+.mr-auto {
+  margin-right: auto !important;
+}
+
+.mlr-auto {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+.ml-6 {
+  margin-left: 6px !important;
+}
+
+.mr-6 {
+  margin-right: 6px !important;
+}
+
+.mt-5 {
+  margin-top: 5px !important;
+}
+
+.ml-10 {
+  margin-left: px(10) !important;
+}
+
+.truncate-text,
+.truncate-text-2,
+.truncate-text-3,
+.truncate-text-4,
+.truncate-text-5 {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.truncate-text-2 {
+  -webkit-line-clamp: 2;
+}
+.truncate-text-3 {
+  -webkit-line-clamp: 3;
+}
+.truncate-text-4 {
+  -webkit-line-clamp: 4;
+}
+.truncate-text-5 {
+  -webkit-line-clamp: 5;
+}
+
+.img-cover {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aspect-ratio {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 0;
+}
+
+.aspect-ratio > * {
+  @include absolute($top: 0, $left: 0);
+}

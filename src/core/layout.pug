@@ -1,0 +1,35 @@
+//- Master layout
+include api
+include functions
+include component
+include mixins
+include grid/grid
+
+doctype html
+html(lang='en')
+  head
+    //- Meta
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    meta(name='msapplication-TileColor', content='#0E0E0E')
+    meta(name='them-color', content='#0E0E0E')
+
+    //- Robots
+    meta(name='googlebot', content='noarchive')
+    meta(name='robots', content='noarchive')
+
+    block title
+      title Demo
+
+    block stylesheet
+  body
+    #root
+      block header
+
+      #content
+        block content
+
+      block footer
+
+    block scripts

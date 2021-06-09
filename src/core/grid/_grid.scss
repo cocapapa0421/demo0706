@@ -1,0 +1,65 @@
+.grid {
+  @include flex(flex, wrap);
+  margin-right: -#{$grid-gutter-small / 2};
+  margin-left: -#{$grid-gutter-small / 2};
+
+  > * {
+    padding-right: $grid-gutter-small / 2;
+    padding-left: $grid-gutter-small / 2;
+  }
+
+  @include media(">=sm") {
+    margin-right: -#{$grid-gutter / 2};
+    margin-left: -#{$grid-gutter / 2};
+
+    > * {
+      padding-right: $grid-gutter / 2;
+      padding-left: $grid-gutter / 2;
+    }
+  }
+
+  @include media(">=xl") {
+    margin-right: -#{$grid-gutter-medium / 2};
+    margin-left: -#{$grid-gutter-medium / 2};
+
+    > * {
+      padding-right: $grid-gutter-medium / 2;
+      padding-left: $grid-gutter-medium / 2;
+    }
+  }
+}
+
+.col {
+  @include columns-loop($grid-cols);
+
+  &-1:nth-of-type(n + 13),
+  &-2:nth-of-type(n + 7),
+  &-3:nth-of-type(n + 5),
+  &-4:nth-of-type(n + 4),
+  &-6:nth-of-type(n + 3),
+  &-12:nth-of-type(n + 2) {
+    margin-top: $grid-gutter-small;
+  }
+
+  @include media(">=sm") {
+    &-sm-1:nth-of-type(n + 13),
+    &-sm-2:nth-of-type(n + 7),
+    &-sm-3:nth-of-type(n + 5),
+    &-sm-4:nth-of-type(n + 4),
+    &-sm-6:nth-of-type(n + 3),
+    &-sm-12:nth-of-type(n + 2) {
+      margin-top: $grid-gutter;
+    }
+  }
+
+  @include media(">=xl") {
+    &-xl-1:nth-of-type(n + 13),
+    &-xl-2:nth-of-type(n + 7),
+    &-xl-3:nth-of-type(n + 5),
+    &-xl-4:nth-of-type(n + 4),
+    &-xl-6:nth-of-type(n + 3),
+    &-xl-12:nth-of-type(n + 2) {
+      margin-top: $grid-gutter-medium;
+    }
+  }
+}

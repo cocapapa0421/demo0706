@@ -1,0 +1,4 @@
+mixin section(props={})
+  +component('section', 'section')
+    if (props.hasBackground)
+      div(class=props.backgroundClass || 'section__background')

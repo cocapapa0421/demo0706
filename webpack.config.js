@@ -68,7 +68,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: "views/index.pug",
+      template: "index.pug",
       inject: true,
     }),
     new webpack.HotModuleReplacementPlugin(),

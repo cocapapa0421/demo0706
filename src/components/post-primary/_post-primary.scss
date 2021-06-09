@@ -1,0 +1,53 @@
+.post-primary {
+  border-radius: 5px;
+  background-color: $color-white;
+  font-size: rem(14);
+  overflow: hidden;
+
+  @include media("<lg") {
+    border: 1px solid $color-gray-3;
+  }
+
+  @include media(">=lg") {
+    border-radius: rem(10);
+  }
+
+  @include media(">=#{$container}") {
+    border-radius: rem(15);
+  }
+}
+
+.post-primary__info {
+  padding: 10px 10px;
+
+  @include media(">=#{$container}") {
+    padding: rem(15) rem(20) rem(20);
+  }
+}
+
+.post-primary__thumb {
+  padding-top: mathSizeImage(165, 294);
+}
+
+.post-primary__title {
+  height: rem(42);
+  margin-top: rem(15);
+  margin-bottom: rem(20);
+  font-size: rem(16);
+}
+
+.post-primary__avatar {
+  @include size(rem(40));
+  display: block;
+  border-radius: rem(10);
+  overflow: hidden;
+}
+
+.post-primary__time {
+  @extend %flex-between-middle;
+  color: $secondary-color-light-1;
+}
+
+.post-primary__icon {
+  color: $color-gray-1;
+}

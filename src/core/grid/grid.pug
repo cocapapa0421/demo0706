@@ -1,0 +1,52 @@
+include ../settings
+
+-
+  const {
+    sectionClassDefault,
+    containerClassDefault,
+    gridClass,
+    colArrangement,
+    overlay
+  } = gridSettings
+
+  const get = arr => {
+    if (arr.length > 0) {
+      return colArrangement.map((item, index) => {
+        return arr[index] && `col-${item}-${arr[index]}`
+      })
+    }
+  }
+
+mixin container(props = {})
+  div(class=containerClassDefault)
+    if (block)
+      block
+
+mixin row(hasSection = false, props = {})
+  |
+  | <!-- Section -->
+  if (hasSection)
+    section(class=sectionClassDefault)
+      div(class=containerClassDefault)
+        div(class=gridClass)&attributes(attributes)
+          if (block)
+            block
+  else
+    div(class=containerClassDefault)
+      div(class=gridClass)&attributes(attributes)
+        if (block)
+          block
+  | <!-- Section -->
+  |
+
+mixin col(props = {})
+  -
+    const defaultProps = {
+      cols: [12],
+      offsets: []
+    }
+
+    const _props = Object.assign({}, defaultProps, props)
+  +component('div', null, props, false)(class=get(_props.cols))
+    if (block)
+      block

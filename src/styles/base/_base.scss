@@ -1,0 +1,79 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body,
+[class] {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @include media("<md") {
+    font-size: 56.25%;
+  }
+}
+
+body {
+  color: $secondary-color;
+  font-size: rem($font-base);
+  font-family: $font-primary;
+  font-weight: $font-normal;
+  line-height: $line-height-base;
+}
+
+ol[class],
+ul[class] {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+[href] {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  vertical-align: middle;
+}
+
+input,
+textarea,
+button {
+  appearance: none;
+  border-radius: 0;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  outline: none;
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+embed,
+iframe,
+img,
+object,
+video {
+  max-width: 100%;
+}

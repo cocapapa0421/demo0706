@@ -1,0 +1,18 @@
+//- Functions
+-
+  function random(min, max) {
+    if (Array.isArray(min)) {
+      if (max === undefined) {
+        return min[Math.floor(Math.random()*min.length)];
+      } else {
+        return min[Math.floor(Math.random()*min.length)].slice(0, max);
+      }
+    } else {
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
+  }
+
+mixin menu
+  nav
+    ul
+      li

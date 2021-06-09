@@ -1,1 +1,1 @@
-import "./assets/scss/main.scss";
+import "./styles/styles.scss";

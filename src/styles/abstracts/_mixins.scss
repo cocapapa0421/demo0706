@@ -1,0 +1,126 @@
+@mixin flex(
+  $display: flex,
+  $wrap: null,
+  $direction: null,
+  $justify: null,
+  $align: null,
+  $content: null
+) {
+  display: $display;
+  flex-wrap: $wrap;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  align-content: $content;
+}
+
+@mixin flex-between() {
+  @include flex($justify: space-between);
+}
+
+@mixin flex-middle() {
+  @include flex($align: center);
+}
+
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin absolute($args...) {
+  @include position(absolute, $args...);
+}
+
+@mixin relative($args...) {
+  @include position(relative, $args...);
+}
+
+@mixin fixed($args...) {
+  @include position(fixed, $args...);
+}
+
+@mixin centerAbsolute($direction: both) {
+  @include absolute();
+
+  @if $direction == top {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @if $direction == left {
+    left: 50%;
+    transform: translateY(-50%);
+  }
+  @if $direction == both {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin pushAuto() {
+  display: block;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+@mixin pseudo(
+  $display: block,
+  $pos: absolute,
+  $contents: "",
+  $width: 100%,
+  $height: 100%,
+  $top: 0,
+  $left: 0
+) {
+  @include size($width, $height);
+  content: $content;
+  position: $pos;
+  top: $top;
+  left: $left;
+  display: $display;
+}
+
+@mixin bgImage($url, $repeat: null, $position: null, $size: null) {
+  background: {
+    image: url($url);
+    position: $position;
+    repeat: $repeat;
+    size: $size;
+  }
+}
+
+@mixin columns-loop($grid-cols) {
+  @each $val, $cols in $grid-cols {
+    @if $val == "tn" {
+      @for $i from 1 through $cols {
+        &-#{$i} {
+          width: colWidth($i, $cols);
+        }
+      }
+    } @else {
+      @for $i from 1 through $cols {
+        &-#{$val}-#{$i} {
+          @include media(">=#{$val}") {
+            width: colWidth($i, $cols);
+          }
+        }
+      }
+    }
+  }
+}

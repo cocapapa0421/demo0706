@@ -1,0 +1,61 @@
+.section {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  @include media(">=sm") {
+    padding-top: rem(20);
+    padding-bottom: rem(20);
+  }
+
+  @include media(">=md") {
+    padding-top: rem(30);
+    padding-bottom: rem(30);
+  }
+
+  @include media(">=xl") {
+    padding-top: rem(50);
+    padding-bottom: rem(50);
+    margin-right: rem(10);
+    margin-left: rem(10);
+  }
+}
+
+.section--collapse {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.section--collapse-top {
+  padding-top: 0;
+}
+
+.section--medium {
+  @include media(">=xl") {
+    padding-top: rem(60);
+    padding-bottom: rem(60);
+  }
+}
+
+.section--rounded {
+  border-radius: 5px;
+
+  @include media(">=sm") {
+    border-radius: rem(10);
+  }
+
+  @include media(">=lg") {
+    border-radius: rem(15);
+  }
+
+  @include media(">=xl") {
+    border-radius: rem(50);
+  }
+}
+
+.section--background-1 {
+  background-color: $color-light-1;
+}
+
+.section__head {
+  margin-bottom: rem(20);
+}

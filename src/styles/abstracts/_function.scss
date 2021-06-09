@@ -1,0 +1,11 @@
+@function mathSizeImage($height, $width) {
+  @return $height/$width * 100%;
+}
+
+@function rem($pixel) {
+  @return ($pixel/10) * 1rem;
+}
+
+@function colWidth($i, $columns) {
+  @return 100% / $columns * $i;
+}

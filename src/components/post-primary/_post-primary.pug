@@ -1,0 +1,28 @@
+//- props: {
+    thumb: image url,
+    avatar: image url
+    authorName: String,
+    title: String
+  }
+
+mixin post-primary(props = {})
+  +component('article', 'post-primary')
+    +link().post-primary__thumb.aspect-ratio
+      +img(props.thumb || random(api.post.thumb)).img-cover
+    div.post-primary__info
+      div.post-primary__meta
+        +link().post-primary__avatar
+          +img(props.avatar || random(api.post.avatar)).img-cover
+        +link()=props.authorName || random(api.post.author)
+        +link()
+          i.las.la-arrow-up
+          |  4k3
+        +link()
+          i.las.la-comment
+          |  825
+      h3.post-primary__title
+        +link()=props.title || random(api.post.title)
+      div.post-primary__time
+        span=props.time || '16th October, 2019'
+        +link().post-primary__save
+          i.las.la-bookmark
