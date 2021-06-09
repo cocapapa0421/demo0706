@@ -1,4 +1,16 @@
 mixin section(props={})
-  +component('section', 'section')
-    if (props.hasBackground)
-      div(class=props.backgroundClass || 'section__background')
+  -
+    const defaultProps = {
+      hasContainer: true
+    }
+
+    const _props = Object.assign({}, defaultProps, props)
+
+  +component('section', 'section')&attributes(attributes)
+    if (_props.hasContainer)
+      .container
+        if block
+          block
+    else
+      if block
+        block

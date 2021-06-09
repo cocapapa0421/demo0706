@@ -1,0 +1,107 @@
+.post-tertiary {
+  @include flex;
+  @include media(">=lg") {
+    justify-content: space-between;
+  }
+}
+
+.post-tertiary__meta > *:not(:first-child) {
+  margin-top: rem(17);
+}
+
+.post-tertiary__avatar,
+.post-tertiary__box {
+  @include size(5rem);
+  border-radius: rem(10);
+  overflow: hidden;
+}
+
+.post-tertiary__box {
+  display: block;
+  padding: 7px 7px;
+  background-color: $secondary-color-light-1;
+  color: $primary-color;
+  font-size: rem(13);
+  font-weight: $font-medium;
+  text-align: center;
+}
+
+.post-tertiary__box > * {
+  display: block;
+}
+
+.post-tertiary__content {
+  border-radius: 5px;
+  background-color: $color-white;
+  overflow: hidden;
+
+  @include media("<lg") {
+    border: 1px solid $color-gray-3;
+  }
+
+  @include media(">=lg") {
+    width: calc(100% - 6.5rem);
+    border-radius: rem(10);
+  }
+
+  @include media(">=xl") {
+    border-radius: rem(15);
+  }
+}
+
+.post-tertiary__thumb {
+  padding-top: mathSizeImage(311, 554);
+}
+
+.post-tertiary__play {
+  @include flex($align: center, $justify: center);
+  @include size(6rem);
+  @include absolute($top: 50%, $left: 50%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: rgba($color-white, 0.3);
+  backdrop-filter: blur(16.3097px);
+  font-size: rem(30);
+  color: $primary-color;
+}
+
+.post-tertiary__info {
+  padding: rem(10) rem(10);
+
+  @include media(">=lg") {
+    padding: rem(20) rem(20);
+  }
+}
+
+.post-tertiary__category {
+  display: inline-block;
+  padding: 9px 15px;
+  background-color: $primary-color;
+  border-radius: rem(17);
+  font-size: rem(12);
+  font-weight: $font-medium;
+}
+
+.post-tertiary__title {
+  margin-top: rem(10);
+  margin-bottom: rem(10);
+  max-height: rem(58);
+  font-size: rem(22);
+}
+
+.post-tertiary__desc {
+  max-height: rem(48);
+  margin-bottom: rem(15);
+  font-size: rem(14);
+  line-height: rem(24);
+
+  @include media(">=lg") {
+    margin-bottom: rem(30);
+  }
+}
+
+.post-tertiary__time {
+  @extend %flex-between-middle;
+  color: $secondary-color-light-2;
+  font-size: rem(14);
+}

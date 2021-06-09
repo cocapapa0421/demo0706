@@ -22,22 +22,39 @@ mixin container(props = {})
     if (block)
       block
 
-mixin row(hasSection = false, props = {})
-  |
-  | <!-- Section -->
-  if (hasSection)
+mixin row(props = {})
+  -
+    const defaultProps = {
+      hasSection: false,
+      hasContainer: false
+    }
+    const _props = Object.assign({}, defaultProps, props)
+
+  if (_props.hasSection)
+    |
+    | <!-- Section -->
     section(class=sectionClassDefault)
-      div(class=containerClassDefault)
+      if (_props.hasContainer)
+        div(class=containerClassDefault)
+          div(class=gridClass)&attributes(attributes)
+            if (block)
+              block
+      else
         div(class=gridClass)&attributes(attributes)
           if (block)
             block
+    | <!-- Section -->
+    |
   else
-    div(class=containerClassDefault)
+    if (_props.hasContainer)
+      div(class=containerClassDefault)
+        div(class=gridClass)&attributes(attributes)
+            if (block)
+              block
+    else
       div(class=gridClass)&attributes(attributes)
         if (block)
           block
-  | <!-- Section -->
-  |
 
 mixin col(props = {})
   -

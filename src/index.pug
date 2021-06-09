@@ -1,6 +1,10 @@
 extends core/layout
 
+include components/section/_section
+include components/heading/_heading
 include components/post-primary/_post-primary
+include components/post-secondary/_post-secondary
+include components/post-tertiary/_post-tertiary
 
 block stylesheet
   link(rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css")
@@ -10,7 +14,75 @@ block header
 
 
 block content
-  +row()
-    each val in [1, 2, 3, 4, 5, 6, 7, 8]
-      +col({cols: [12, 12, 6, 3]})
-        +post-primary()
+
+  +section().section--background-1.section--rounded
+    header.section__head
+      +heading({title: 'With Category'})
+    +row()
+      +col({cols:[12, 6, 6, 3]})
+        +row()
+          -
+            let data = [
+              {
+                title: 'Drummer Steve Gorman Looks Back at Black Crowes’ Legacy',
+                avatar: './images/thumb22.jpg',
+                thumb: './images/post14.jpg'
+              },
+              {
+                title: 'A note about the new Madeon single',
+                avatar: './images/thumb23.jpg',
+                thumb: './images/post15.jpg'
+              },
+              {
+                title: 'Lil Baby And Future Roll Around In The Dirt In \'Out The Mud',
+                avatar: './images/thumb24.jpg',
+                thumb: './images/post16.jpg'
+              }
+            ]
+          each post in data
+            +col({cols:[12, 4, 4, 12 ]})
+              +post-primary(post)
+
+      +col({cols:[12, 6, 6, 6]})
+        +post-tertiary({
+          hasVideo: true,
+          thumb: "./images/post38.jpg",
+          avatar: "./images/thumb27.jpg",
+          title: "Lil Baby And Future Roll Around In The Dirt In 'Out The Mud",
+          desc: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas"
+        })
+        +post-tertiary()
+
+      +col({cols:[12, 6, 6, 3]})
+        +row()
+          +col({cols:[12, 4, 4, 12 ]})
+            +post-primary()
+          +col({cols:[12, 4, 4, 12 ]})
+            +post-primary()
+          +col({cols:[12, 4, 4, 12 ]})
+            +post-primary()
+
+  +section()
+    header.section__head
+      +heading({title: 'With Category'})
+    +row()
+      +col({cols: [12, 12, 12, 8]})
+        +row()
+          +col({cols: [12, 6, 6, 6]})
+            +post-secondary()
+          +col({cols: [12, 6, 6, 6]})
+            +post-secondary()
+          +col({cols: [12, 6, 6, 6]})
+            +post-secondary()
+          +col({cols: [12, 6, 6, 6]})
+            +post-secondary()
+          +col({cols: [12, 6, 6, 6]})
+            +post-secondary()
+          +col({cols: [12, 6, 6, 6]})
+            +post-secondary()
+          +col({cols: [12, 6, 6, 6]})
+            +post-secondary()
+          +col({cols: [12, 6, 6, 6]})
+            +post-secondary()
+
+      +col({cols: [12, 12, 12, 4]})

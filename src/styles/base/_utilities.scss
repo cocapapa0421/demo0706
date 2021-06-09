@@ -46,6 +46,11 @@
   align-items: flex-end;
 }
 
+.flex-between-middle {
+  align-items: center;
+  justify-content: center;
+}
+
 .block {
   display: block;
 }
@@ -75,11 +80,19 @@
 }
 
 .visible-desktop {
-  display: block;
+  @include media("<lg") {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
 }
 
 .hidden-desktop {
-  display: none;
+  @include media(">=lg") {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
 }
 
 .ml-auto {
@@ -150,6 +163,6 @@
   height: 0;
 }
 
-.aspect-ratio > * {
+.aspect-ratio > img {
   @include absolute($top: 0, $left: 0);
 }

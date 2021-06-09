@@ -1,7 +1,25 @@
 mixin post-secondary(props = {})
-  +component('article', 'post-secondary')
-    +link().post-secondary__category=props.category || random(api.post.categories)
-    div.post-secondary__thumb.aspect-ratio
-      +img(src=props.thumb || random(api.post.thumb)).img-cover
+  -
+    const defaultProps = {
+      time: '25th November, 2020',
+      iconSave: 'las la-bookmark',
+      authorName: 'Wiloke'
+    }
+    const _props = Object.assign({}, defaultProps, props)
+
+  +component('article', 'post-secondary')&attributes(attributes)
+    +link().post-secondary__category=_props.category || random(api.post.categories)
+    +link().post-secondary__thumb.aspect-ratio
+      +img(src=_props.thumb || random(api.post.thumb)).img-cover
     div.post-secondary__info
-      h3.post-secondary__title
+      .flex.flex-between-middle
+        +heading({className: 'post-secondary__title', linkClassName: 'post-secondary__title-link'})
+        +link().save-icon
+          i(class=_props.iconSave)
+
+      .post-secondary__meta.flex.flex-middle
+        +link().post-secondary__avatar
+          +img(_props.thumb || random(api.post.thumb)).img-cover
+        +link() By #[strong=_props.authorName]
+        span •
+        span=_props.time

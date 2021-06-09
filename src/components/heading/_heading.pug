@@ -1,0 +1,17 @@
+mixin heading(props = {})
+  -
+    const defaultProps = {
+      hasLink: true,
+      className: 'heading',
+      linkClassName: 'heading__link',
+      textClassName: 'heading__text',
+      tag: 'h3'
+    }
+    const _props = Object.assign({}, defaultProps, props)
+
+  +component(_props.tag, _props.className, _props, false)&attributes(attributes)
+    if _props.hasLink
+      +link()(class=_props.linkClassName)=props.title || random(api.post.title)
+    else
+      span(class=_props.textClassName)=props.title || random(api.post.title)
+

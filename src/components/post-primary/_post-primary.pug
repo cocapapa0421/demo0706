@@ -6,14 +6,14 @@
   }
 
 mixin post-primary(props = {})
-  +component('article', 'post-primary')
+  +component('article', 'post-primary')&attributes(attributes)
     +link().post-primary__thumb.aspect-ratio
       +img(props.thumb || random(api.post.thumb)).img-cover
     div.post-primary__info
       div.post-primary__meta
         +link().post-primary__avatar
           +img(props.avatar || random(api.post.avatar)).img-cover
-        +link()=props.authorName || random(api.post.author)
+        +link().mr-auto=props.authorName || random(api.post.author)
         +link()
           i.las.la-arrow-up
           |  4k3

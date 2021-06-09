@@ -1,0 +1,76 @@
+.post-secondary {
+  position: relative;
+  display: block;
+  border-radius: 5px;
+  color: $color-white;
+  font-size: rem(14);
+  overflow: hidden;
+
+  @include media(">xs") {
+    border-radius: 10px;
+  }
+
+  @include media(">=lg") {
+    border-radius: rem(30);
+  }
+}
+
+.post-secondary__category {
+  @include absolute($top: 5px, $left: 5px);
+  padding: rem(10) rem(15);
+  background-color: $primary-color;
+  border-radius: rem(17);
+  color: $secondary-color;
+  font-size: rem(12);
+  font-weight: $font-medium;
+
+  @include media(">sm") {
+    top: rem(15);
+    left: rem(15);
+  }
+}
+
+.post-secondary__thumb {
+  padding-top: mathSizeImage(263, 403);
+}
+
+.post-secondary__info {
+  top: initial;
+  @include absolute(initial, 5px, 5px, 5px);
+
+  @include media(">sm") {
+    right: rem(15);
+    bottom: rem(15);
+    left: rem(15);
+  }
+}
+
+.post-secondary__title {
+  width: calc(100% - 5rem);
+  max-height: rem(44);
+  font-size: rem(17);
+  font-weight: $font-medium;
+}
+
+.post-secondary__save {
+  font-size: rem(24);
+}
+
+.post-secondary__meta {
+  margin-top: 10px;
+  padding: 4px 15px 4px 4px;
+  background-color: rgba($color-white, 0.15);
+  border-radius: rem(24);
+  backdrop-filter: blur(27.1828px);
+
+  > *:not(:last-child) {
+    margin-right: rem(10);
+  }
+}
+
+.post-secondary__avatar {
+  display: block;
+  @include size(4rem);
+  border-radius: 50%;
+  overflow: hidden;
+}

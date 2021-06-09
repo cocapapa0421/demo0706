@@ -12,7 +12,7 @@
     border-radius: rem(10);
   }
 
-  @include media(">=#{$container}") {
+  @include media(">=xl") {
     border-radius: rem(15);
   }
 }
@@ -20,13 +20,22 @@
 .post-primary__info {
   padding: 10px 10px;
 
-  @include media(">=#{$container}") {
+  @include media(">=xl") {
     padding: rem(15) rem(20) rem(20);
   }
 }
 
 .post-primary__thumb {
   padding-top: mathSizeImage(165, 294);
+}
+
+.post-primary__meta {
+  @extend %flex-middle;
+  @extend %font-medium;
+}
+
+.post-primary__meta > *:not(:first-child) {
+  margin-left: rem(10);
 }
 
 .post-primary__title {

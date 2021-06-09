@@ -1,0 +1,41 @@
+mixin post-tertiary(props = {})
+  -
+    const defaultProps = {
+      views: '4k3',
+      viewsIcon: 'las la-arrow-up',
+      comments: '325',
+      commentsIcon: 'las la-comment',
+      time: '25th October, 2019',
+      hasVideo: false,
+      playIcon: 'las la-play',
+      saveIcon: 'las la-bookmark'
+    }
+
+    const _props = Object.assign({}, defaultProps, props)
+
+  +component('article', 'post-tertiary')&attributes(attributes)
+    div.post-tertiary__meta.visible-lg
+      div.post-tertiary__avatar
+        +img(_props.avatar || random(api.post.avatar)).img-cover
+      +link().post-tertiary__box
+        i(class=_props.viewsIcon)
+        span.mt-5=_props.views
+      +link().post-tertiary__box
+        i(class=_props.commentsIcon)
+        span.mt-5=_props.comments
+
+    div.post-tertiary__content
+      +link().post-tertiary__thumb.aspect-ratio
+        +img(_props.thumb || random(api.post.thumb)).img-cover
+        if _props.hasVideo
+          span.post-tertiary__play
+            i(class=_props.playIcon)
+
+      div.post-tertiary__info
+        +link().post-tertiary__category=_props.category || random(api.post.categories)
+        +heading({className: 'post-tertiary__title', linkClassName: 'post-tertiary__title-link'})
+        p.post-tertiary__desc.truncate-text-2=_props.desc || random(api.text, 100)
+        div.post-tertiary__time
+          span=_props.time
+          +link().icon-save
+            i(class=_props.saveIcon)
