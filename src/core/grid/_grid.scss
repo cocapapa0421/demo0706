@@ -62,4 +62,15 @@
       margin-top: $grid-gutter-medium;
     }
   }
+
+  @include media(">=lg") {
+    &-lg-1:nth-of-type(n + 13),
+    &-lg-2:nth-of-type(n + 7),
+    &-lg-3:nth-of-type(n + 5),
+    &-lg-4:nth-of-type(n + 4),
+    &-lg-6:nth-of-type(n + 3),
+    &-lg-12:nth-of-type(n + 2) {
+      margin-top: $grid-gutter-huge;
+    }
+  }
 }
