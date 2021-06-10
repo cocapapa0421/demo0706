@@ -7,3 +7,18 @@
   padding-right: 1rem;
   padding-left: 1rem;
 }
+
+// Author grid
+.author-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
+  gap: rem(10);
+
+  @include media(">=sm") {
+    gap: rem(15);
+  }
+
+  @include media(">=xl") {
+    gap: rem(30);
+  }
+}

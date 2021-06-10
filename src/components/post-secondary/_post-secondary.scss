@@ -1,16 +1,19 @@
 .post-secondary {
-  position: relative;
-  display: block;
+  @include relative;
   border-radius: 5px;
   color: $color-white;
   font-size: rem(14);
+  z-index: 1;
   overflow: hidden;
 
-  @include media(">xs") {
-    border-radius: 10px;
+  @include media(">=xs") {
+    border-radius: rem(10);
+  }
+  @include media(">sm") {
+    border-radius: rem(15);
   }
 
-  @include media(">=lg") {
+  @include media(">=xl") {
     border-radius: rem(30);
   }
 }
@@ -23,6 +26,7 @@
   color: $secondary-color;
   font-size: rem(12);
   font-weight: $font-medium;
+  z-index: 1;
 
   @include media(">sm") {
     top: rem(15);
@@ -31,14 +35,36 @@
 }
 
 .post-secondary__thumb {
+  background-color: transparent;
   padding-top: mathSizeImage(263, 403);
+}
+
+.post-secondary__thumb:before {
+  content: "";
+  @include absolute(initial, 0, 0, 0);
+  width: 100%;
+  height: 65%;
+  background-image: linear-gradient(
+    180deg,
+    rgba($color-white, 0.0001) 0%,
+    rgba($secondary-color, 0.6) 100%
+  );
+  z-index: -1;
+
+  @include media("<xs") {
+    height: 100%;
+  }
+}
+
+.post-secondary__thumb img {
+  z-index: -2;
 }
 
 .post-secondary__info {
   top: initial;
   @include absolute(initial, 5px, 5px, 5px);
 
-  @include media(">sm") {
+  @include media(">=xl") {
     right: rem(15);
     bottom: rem(15);
     left: rem(15);
@@ -47,7 +73,7 @@
 
 .post-secondary__title {
   width: calc(100% - 5rem);
-  max-height: rem(44);
+  height: rem(44);
   font-size: rem(17);
   font-weight: $font-medium;
 }

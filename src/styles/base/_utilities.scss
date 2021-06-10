@@ -48,7 +48,7 @@
 
 .flex-between-middle {
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .block {
@@ -122,6 +122,16 @@
 
 .ml-10 {
   margin-left: px(10) !important;
+}
+
+.font-normal {
+  font-weight: $font-normal;
+}
+.font-medium {
+  font-weight: $font-medium;
+}
+.font-bold {
+  font-weight: $font-bold;
 }
 
 .truncate-text,

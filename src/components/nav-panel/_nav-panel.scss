@@ -1,0 +1,26 @@
+.nav-panel {
+  color: $color-gray-4;
+  font-size: rem(14);
+}
+
+.nav-panel__heading {
+  margin-bottom: rem(22);
+  color: $color-white;
+  font-weight: $font-medium;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+}
+
+.nav-panel__item {
+  line-height: rem(34);
+}
+
+.nav-panel__item-link:hover {
+  color: $color-white;
+  text-decoration: underline;
+}
+
+.nav-panel p {
+  font-size: rem(16);
+  line-height: rem(26);
+}

@@ -1,0 +1,24 @@
+mixin post-senary(props = {})
+  -
+    const defaultProps = {
+      views: '240 Views',
+      viewsIcon: 'las la-arrow-up',
+      comments: '2 Comments',
+      commentsIcon: 'las la-comment'
+    }
+    const _props = Object.assign({}, defaultProps, props)
+
+  +component('article', 'post-senary', props, false)&attributes(attributes)
+    +link().post-senary__thumb
+      +img(_props.thumb || random(api.post.thumb)).img-cover
+    div.post-senary__info
+      +heading({tag: 'h4', className: 'post-senary__title truncate-text-2', linkClassName: 'post-senary__title-link'})
+      div.post-senary__statistic.p-statistic.flex.flex-middle
+        +link().flex
+          i(class=_props.viewsIcon)
+          span=_props.views
+        +link().flex
+          i(class=_props.commentsIcon)
+          span=_props.comments
+    if block
+      block

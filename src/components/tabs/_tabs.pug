@@ -1,0 +1,16 @@
+mixin tabs(props = {})
+  -
+    const defaultProps = {
+      containerTag: 'div',
+      containerClass: 'tabs',
+      itemTag: 'button',
+      itemClass: 'tabs__item',
+      itemClassActive: 'tabs__item--active',
+      indexItemActive: 0,
+      itemsContent: ['Viewed', 'Popular', 'Trending']
+    }
+    const _props = Object.assign({}, defaultProps, props)
+
+  +component(_props.containerTag, _props.containerClass, props, false)&attributes(attributes)
+    each val, idx in _props.itemsContent
+      +button({tag: _props.itemTag})(class=`${_props.itemClass} ${idx == _props.indexItemActive ? _props.itemClassActive : ''}`)=val

@@ -1,0 +1,15 @@
+mixin author(props = {})
+  -
+    const defaultProps = {
+      name: 'Elliana Palacios',
+      posts: '20 Posts'
+    }
+    const _props = Object.assign({}, defaultProps, props)
+
+  +component('div', 'author', props, false)
+    +link().author__avatar
+      +img(_props.avatar || random(api.post.avatar)).img-cover
+    +heading({tag: 'h4', className: 'author__name truncate-text', linkClassName: 'author__name-link', title: _props.name})
+    +link().author__posts=_props.posts
+    +button({tag: 'a'}).author__button.button--size-l.button--gray.button--circle
+      i.las.la-arrow-right
