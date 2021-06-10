@@ -5,6 +5,7 @@ include functions
 include component
 include mixins
 include grid/grid
+include ../components/button/_button
 
 doctype html
 html(lang='en')
@@ -27,10 +28,12 @@ html(lang='en')
   body
     #root
       block header
+        include ../components/header/_header
 
       #content
         block content
 
       block footer
+        include ../components/footer/_footer
 
     block scripts

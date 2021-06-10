@@ -14,15 +14,15 @@ mixin post-tertiary(props = {})
     const _props = Object.assign({}, defaultProps, props)
 
   +component('article', 'post-tertiary')&attributes(attributes)
-    div.post-tertiary__meta.visible-lg
-      div.post-tertiary__avatar
+    div.post-tertiary__meta.visible-desktop
+      +link().post-tertiary__avatar.block
         +img(_props.avatar || random(api.post.avatar)).img-cover
-      +link().post-tertiary__box
-        i(class=_props.viewsIcon)
-        span.mt-5=_props.views
-      +link().post-tertiary__box
-        i(class=_props.commentsIcon)
-        span.mt-5=_props.comments
+      +link().post-tertiary__box.block
+        i.block(class=_props.viewsIcon)
+        span.block.mt-5=_props.views
+      +link().post-tertiary__box.block
+        i.block(class=_props.commentsIcon)
+        span.block.mt-5=_props.comments
 
     div.post-tertiary__content
       +link().post-tertiary__thumb.aspect-ratio
@@ -33,9 +33,9 @@ mixin post-tertiary(props = {})
 
       div.post-tertiary__info
         +link().post-tertiary__category=_props.category || random(api.post.categories)
-        +heading({className: 'post-tertiary__title', linkClassName: 'post-tertiary__title-link'})
+        +heading({className: 'post-tertiary__title truncate-text-2', linkClassName: 'post-tertiary__title-link'})
         p.post-tertiary__desc.truncate-text-2=_props.desc || random(api.text, 100)
-        div.post-tertiary__time
-          span=_props.time
-          +link().icon-save
+        div.post-tertiary__time.flex.flex-between-middle
+          span.font-medium=_props.time
+          +link()(data-tooltip='Save').post-tertiary__save.button-save
             i(class=_props.saveIcon)

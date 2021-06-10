@@ -1,0 +1,10 @@
+mixin button(props = {})
+  -
+    const defaultProps = {
+      tag: 'button'
+    }
+    const _props = Object.assign({}, defaultProps, props)
+
+  +component(_props.tag, 'button', props, false)&attributes(attributes)
+    if block
+      block

@@ -1,0 +1,21 @@
+.post-septenary {
+  @include flex($justify: space-between, $align: center);
+}
+.post-septenary__thumb {
+  display: block;
+  @include size(rem(80));
+  border-radius: rem(22);
+  overflow: hidden;
+}
+
+.post-septenary__info {
+  width: calc(100% - 8rem);
+  padding-left: rem(15);
+}
+
+.post-septenary__title {
+  margin-bottom: rem(10);
+  max-height: rem(42);
+  font-weight: $font-bold;
+  text-decoration: underline;
+}

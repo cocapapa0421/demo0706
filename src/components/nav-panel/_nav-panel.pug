@@ -1,0 +1,19 @@
+mixin nav-panel(props = {})
+  -
+    const defaultProps = {
+      title: 'Categories',
+      itemsContent: null
+    }
+    const _props = Object.assign({}, defaultProps, props)
+
+  +component('div', 'nav-panel', props, false)&attributes(attributes)
+    +heading({tag:'h4', className: 'nav-panel__heading', linkClassName: 'nav-panel__heading-link', title: _props.title})
+
+    if _props.itemsContent
+      ul.nav-panel__list
+        each val in _props.itemsContent
+          li.nav-panel__item
+            +link().nav-panel__item-link=val
+
+    if block
+      block

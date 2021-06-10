@@ -18,7 +18,7 @@
 }
 
 .post-primary__info {
-  padding: 10px 10px;
+  padding: rem(10) rem(10);
 
   @include media(">=xl") {
     padding: rem(15) rem(20) rem(20);
@@ -53,10 +53,5 @@
 }
 
 .post-primary__time {
-  @extend %flex-between-middle;
-  color: $secondary-color-light-1;
-}
-
-.post-primary__icon {
-  color: $color-gray-1;
+  @extend %post-time;
 }

@@ -22,7 +22,7 @@ mixin post-primary(props = {})
       +img(_props.thumb || random(api.post.thumb)).img-cover
     div.post-primary__info
       div.post-primary__meta
-        +link().post-primary__avatar
+        +link().post-primary__avatar.block
           +img(_props.avatar || random(api.post.avatar)).img-cover
         +link().mr-auto=_props.authorName || random(api.post.author)
         +link()
@@ -33,9 +33,8 @@ mixin post-primary(props = {})
           i(class=_props.commentsIcon)
           | &nbsp;
           span=_props.comments
-      h3.post-primary__title
-        +link()=_props.title || random(api.post.title)
-      div.post-primary__time
+      +heading({className: 'post-primary__title truncate-text-2', linkClassName: 'post-primary__title-link'})
+      div.post-primary__time.flex.flex-between-middle
         span=_props.time
-        +link().post-primary__save
+        +link()(data-tooltip="Save").button-save
           i(class=_props.iconSave)

@@ -1,0 +1,32 @@
+include ../post-senary/_post-senary
+include ../nav-panel/_nav-panel
+
+footer.footer
+  +section({className: 'footer__posts'})
+    +row().grid--huge
+      +col({cols: [12, 4, 4, 4]})
+        +post-senary({thumb: '../../images/post32.jpg'})
+      +col({cols: [12, 4, 4, 4]})
+        +post-senary({thumb: '../../images/post33.jpg'})
+      +col({cols: [12, 4, 4, 4]})
+        +post-senary({thumb: '../../images/post34.jpg'})
+
+  +section({className: 'footer__navigation'})
+    +row()
+      +col({cols: [12, 6, 6, 3]})
+        +nav-panel({title: 'Categories', itemsContent: ['Travel', 'Art Design', 'Beauty', 'LifeStyle']})
+
+      +col({cols: [12, 6, 6, 3]})
+        +nav-panel({title: 'Pages', itemsContent: ['Term of use', 'Privacy', 'About', 'Contact']})
+
+      +col({cols: [12, 6, 6, 3]})
+        +nav-panel({title: 'Company', itemsContent: ['Support', 'Jobs', 'Investors', 'Give Us Feedbacks']})
+
+      +col({cols: [12, 6, 6, 3]})
+        +nav-panel({title: 'Social'})
+          p
+            | At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+
+  +section({className: 'footer__copyright'}).text-center
+    p
+      | Copyright &copy; 2021 Wiloke.com. Address: 1002312 State Street, 20th Floor Boston A

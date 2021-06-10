@@ -1,0 +1,15 @@
+include ../subscribe-form/_subscribe-form
+
+mixin subscribe(props = {})
+  -
+    const defaultProps = {
+      title: 'Subscribe To Your  Newsletters',
+      thumb: '../../images/couple.png'
+    }
+    const _props = Object.assign({}, defaultProps, props)
+
+  +component('div', 'subscribe', props, false)&attributes(attributes)
+    +heading({title: _props.title,className: 'subscribe__title', hasLink: false, textClassName: 'subscribe__title-text'})
+    div.subscribe__thumb
+      +img(_props.thumb)
+    +subscribe-form()(action="#", method="POST")

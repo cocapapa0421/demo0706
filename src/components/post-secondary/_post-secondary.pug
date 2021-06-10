@@ -2,8 +2,7 @@ mixin post-secondary(props = {})
   -
     const defaultProps = {
       time: '25th November, 2020',
-      iconSave: 'las la-bookmark',
-      authorName: 'Wiloke'
+      iconSave: 'las la-bookmark',xs
     }
     const _props = Object.assign({}, defaultProps, props)
 
@@ -13,13 +12,13 @@ mixin post-secondary(props = {})
       +img(src=_props.thumb || random(api.post.thumb)).img-cover
     div.post-secondary__info
       .flex.flex-between-middle
-        +heading({className: 'post-secondary__title', linkClassName: 'post-secondary__title-link'})
-        +link().save-icon
+        +heading({className: 'post-secondary__title truncate-text-2', linkClassName: 'post-secondary__title-link'})
+        +link().post-secondary__save
           i(class=_props.iconSave)
 
       .post-secondary__meta.flex.flex-middle
         +link().post-secondary__avatar
-          +img(_props.thumb || random(api.post.thumb)).img-cover
-        +link() By #[strong=_props.authorName]
+          +img(_props.avatar || random(api.post.avatar)).img-cover
+        +link() By #[strong=_props.authorName || random(api.post.author)]
         span •
         span=_props.time

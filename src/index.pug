@@ -5,6 +5,10 @@ include components/heading/_heading
 include components/post-primary/_post-primary
 include components/post-secondary/_post-secondary
 include components/post-tertiary/_post-tertiary
+include components/post-septenary/_post-septenary
+include components/subscribe/_subscribe
+include components/tabs/_tabs
+include components/author/_author
 
 block stylesheet
   link(rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css")
@@ -14,75 +18,96 @@ block header
 
 
 block content
+  +section().author-section
+    header.section__head
+      +heading({tag: 'h2', title: 'Top Author'}).heading--size-l
+      p.author-section__desc
+        | At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
+
+    div.author-grid
+      div.author-section__item
+        +author({avatar: './images/author1.jpg', name: 'Elliana Palacios', posts: '20 Posts'})
+      div.author-section__item
+        +author({avatar: './images/author2.jpg', name: 'June Cha', posts: '14 Posts'})
+      div.author-section__item
+        +author({avatar: './images/author3.jpg', name: 'Andreas Brixen', posts: '12 Posts'})
+      div.author-section__item
+        +author({avatar: './images/author4.jpg', name: 'Vinh Tran', posts: '10 Posts'})
+      div.author-section__item
+        +author({avatar: './images/author5.jpg', name: 'Eden Tuan', posts: '5 Posts'})
+
+    div.author-section__foot.text-center
+      div.button-groups.flex.flex-middle
+
+
+
+
+  +section().section--collapse-top.ads
+    +link()
+      +img('./images/banner.jpg')
 
   +section().section--background-1.section--rounded
     header.section__head
-      +heading({title: 'With Category Test Netlify sua loi title'})
-    +row()
-      +col({cols:[12, 6, 6, 3]})
-        +row()
-          -
-            let data = [
-              {
-                title: 'Drummer Steve Gorman Looks Back at Black Crowes’ Legacy',
-                avatar: './images/thumb22.jpg',
-                thumb: './images/post14.jpg'
-              },
-              {
-                title: 'A note about the new Madeon single',
-                avatar: './images/thumb23.jpg',
-                thumb: './images/post15.jpg'
-              },
-              {
-                title: 'Lil Baby And Future Roll Around In The Dirt In \'Out The Mud',
-                avatar: './images/thumb24.jpg',
-                thumb: './images/post16.jpg'
-              }
-            ]
-          each post in data
-            +col({cols:[12, 4, 4, 12 ]})
-              +post-primary(post)
+      +heading({tag: 'h2', title: 'With Category'})
 
-      +col({cols:[12, 6, 6, 6]})
-        +post-tertiary({
-          hasVideo: true,
-          thumb: "./images/post38.jpg",
-          avatar: "./images/thumb27.jpg",
-          title: "Lil Baby And Future Roll Around In The Dirt In 'Out The Mud",
-          desc: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas"
-        })
-        +post-tertiary()
+    +row().grid--huge
+      +col({cols: [12, 12, 12, 3]})
+        +row().grid--huge
+          +col({cols: [12, 4, 4, 12]})
+            +post-primary({thumb: './images/post14.jpg'})
+          +col({cols: [12, 4, 4, 12]})
+            +post-primary({thumb: './images/post15.jpg'})
+          +col({cols: [12, 4, 4, 12]})
+            +post-primary({thumb: './images/post16.jpg'})
 
-      +col({cols:[12, 6, 6, 3]})
-        +row()
-          +col({cols:[12, 4, 4, 12 ]})
-            +post-primary()
-          +col({cols:[12, 4, 4, 12 ]})
-            +post-primary()
-          +col({cols:[12, 4, 4, 12 ]})
-            +post-primary()
+      +col({cols: [12, 12, 12, 6]})
+        +row().grid--huge
+          +col({cols: [12, 6, 6, 12]})
+            +post-tertiary({hasVideo: true, thumb: './images/post38.jpg'})
+          +col({cols: [12, 6, 6, 12]})
+            +post-tertiary({thumb: './images/post39.jpg'})
+
+      +col({cols: [12, 12, 12, 3]})
+        +row().grid--huge
+          +col({cols: [12, 4, 4, 12]})
+            +post-primary({thumb: './images/post17.jpg'})
+          +col({cols: [12, 4, 4, 12]})
+            +post-primary({thumb: './images/post18.jpg'})
+          +col({cols: [12, 4, 4, 12]})
+            +post-primary({thumb: './images/post19.jpg'})
 
   +section()
     header.section__head
-      +heading({title: 'With Category Test Netlify'})
-    +row()
+      +heading({tag: 'h2', title: 'All Categories'})
+    +row().grid--huge
       +col({cols: [12, 12, 12, 8]})
-        +row()
+        +row().grid--huge
           +col({cols: [12, 6, 6, 6]})
-            +post-secondary()
+            +post-secondary({thumb: './images/post23.jpg'})
           +col({cols: [12, 6, 6, 6]})
-            +post-secondary()
+            +post-secondary({thumb: './images/post24.jpg'})
           +col({cols: [12, 6, 6, 6]})
-            +post-secondary()
+            +post-secondary({thumb: './images/post25.jpg'})
           +col({cols: [12, 6, 6, 6]})
-            +post-secondary()
+            +post-secondary({thumb: './images/post27.jpg'})
           +col({cols: [12, 6, 6, 6]})
-            +post-secondary()
+            +post-secondary({thumb: './images/post28.jpg'})
           +col({cols: [12, 6, 6, 6]})
-            +post-secondary()
+            +post-secondary({thumb: './images/post29.jpg'})
           +col({cols: [12, 6, 6, 6]})
-            +post-secondary()
+            +post-secondary({thumb: './images/post30.jpg'})
           +col({cols: [12, 6, 6, 6]})
-            +post-secondary()
+            +post-secondary({thumb: './images/post31.jpg'})
 
       +col({cols: [12, 12, 12, 4]})
+        +subscribe()
+        +component('div', 'home-tabs-content', null, false)
+          .home-tabs-content__head
+            +tabs()
+          .home-tabs-content__body
+            .home-tabs-content__item
+              +post-septenary()
+            .home-tabs-content__item
+              +post-septenary()
+            .home-tabs-content__item
+              +post-septenary()

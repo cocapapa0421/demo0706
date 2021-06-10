@@ -1,0 +1,28 @@
+.tabs {
+  @include flex($align: center, $justify: space-between);
+  padding: 3px 3px;
+  background-color: $color-gray-1;
+  border-radius: rem(22);
+  color: $secondary-color-light-2;
+}
+
+.tabs__item {
+  display: block;
+  flex: 1;
+  background-color: transparent;
+  padding: rem(7) rem(10);
+  border-radius: rem(19);
+  color: $secondary-color-light-1;
+  font-size: rem(14);
+  font-weight: $font-bold;
+  text-align: center;
+  line-height: rem(24);
+}
+
+.tabs__item:hover,
+.tabs__item:focus,
+.tabs__item--active {
+  background-color: $color-white;
+  box-shadow: 0 rem(5) rem(20) rgba($secondary-color, 0.1);
+  font-weight: $font-bold;
+}

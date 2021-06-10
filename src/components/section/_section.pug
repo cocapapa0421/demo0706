@@ -2,11 +2,12 @@ mixin section(props={})
   -
     const defaultProps = {
       hasContainer: true,
-      hasBackgroundEl: false
+      hasBackgroundEl: false,
+      className: 'section'
     }
     const _props = Object.assign({}, defaultProps, props)
 
-  +component('section', 'section')&attributes(attributes)
+  +component('section', _props.className)&attributes(attributes)
     if _props.hasBackgroundEl
       div.section__background
 

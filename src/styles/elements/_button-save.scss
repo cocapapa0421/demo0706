@@ -1,0 +1,39 @@
+// Button save style
+.button-save {
+  display: block;
+  @include relative;
+  color: $color-gray-5;
+  font-size: rem(20);
+  font-weight: $font-normal;
+  cursor: pointer;
+}
+
+.button-save:hover {
+  color: $secondary-color-light-1;
+}
+
+.button-save::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  padding: 5px 10px;
+  background-color: $secondary-color-light-2;
+  border-radius: 6px;
+  color: $color-white;
+  font-size: rem(12);
+}
+
+.button-save:hover:before {
+  display: block;
+}
+
+.button-save--size-m {
+  font-size: rem(24);
+}
+
+.button-save--size-l {
+  font-size: rem(26);
+}

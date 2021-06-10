@@ -1,0 +1,9 @@
+.p-statistic {
+  color: $secondary-color-light-1;
+  font-size: rem(13);
+  font-weight: $font-medium;
+}
+
+.p-statistic > * + * {
+  margin-left: rem(15);
+}

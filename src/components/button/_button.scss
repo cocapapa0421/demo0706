@@ -1,0 +1,31 @@
+.button {
+  display: inline-flex;
+  background-color: transparent;
+  padding: 1rem 1.5rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  text-decoration: none;
+  box-shadow: none;
+}
+
+.button--size-s,
+.button--size-m,
+.button--size-l {
+  align-items: center;
+  justify-content: center;
+}
+
+.button--size-l {
+  @include size(rem(44));
+  font-size: rem(20);
+}
+
+.button--gray {
+  background-color: $color-gray-1;
+}
+
+.button--circle {
+  border-radius: 50%;
+}
