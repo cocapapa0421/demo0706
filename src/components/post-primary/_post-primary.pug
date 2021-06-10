@@ -6,23 +6,36 @@
   }
 
 mixin post-primary(props = {})
-  +component('article', 'post-primary')&attributes(attributes)
+  -
+    const defaultProps = {
+      views: "4k3",
+      viewsIcon: "las la-arrow-up",
+      comments: "825",
+      commentsIcon: "las la-comment",
+      time: "16th October, 2019",
+      iconSave: 'las la-bookmark',
+    }
+    const _props = Object.assign({}, defaultProps, props)
+
+  +component('article', 'post-primary')
     +link().post-primary__thumb.aspect-ratio
-      +img(props.thumb || random(api.post.thumb)).img-cover
+      +img(_props.thumb || random(api.post.thumb)).img-cover
     div.post-primary__info
       div.post-primary__meta
         +link().post-primary__avatar
-          +img(props.avatar || random(api.post.avatar)).img-cover
-        +link().mr-auto=props.authorName || random(api.post.author)
+          +img(_props.avatar || random(api.post.avatar)).img-cover
+        +link().mr-auto=_props.authorName || random(api.post.author)
         +link()
-          i.las.la-arrow-up
-          |  4k3
+          i(class=_props.viewsIcon)
+          | &nbsp;
+          span=_props.views
         +link()
-          i.las.la-comment
-          |  825
+          i(class=_props.commentsIcon)
+          | &nbsp;
+          span=_props.comments
       h3.post-primary__title
-        +link()=props.title || random(api.post.title)
+        +link()=_props.title || random(api.post.title)
       div.post-primary__time
-        span=props.time || '16th October, 2019'
+        span=_props.time
         +link().post-primary__save
-          i.las.la-bookmark
+          i(class=_props.iconSave)

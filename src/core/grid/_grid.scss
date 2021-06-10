@@ -63,13 +63,13 @@
     }
   }
 
-  @include media(">=lg") {
-    &-lg-1:nth-of-type(n + 13),
-    &-lg-2:nth-of-type(n + 7),
-    &-lg-3:nth-of-type(n + 5),
-    &-lg-4:nth-of-type(n + 4),
-    &-lg-6:nth-of-type(n + 3),
-    &-lg-12:nth-of-type(n + 2) {
+  @include media(">=xl") {
+    &-xl-1:nth-of-type(n + 13),
+    &-xl-2:nth-of-type(n + 7),
+    &-xl-3:nth-of-type(n + 5),
+    &-xl-4:nth-of-type(n + 4),
+    &-xl-6:nth-of-type(n + 3),
+    &-xl-12:nth-of-type(n + 2) {
       margin-top: $grid-gutter-huge;
     }
   }

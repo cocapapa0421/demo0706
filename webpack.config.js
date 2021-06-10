@@ -1,7 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   context: path.resolve(__dirname, "./src"),
@@ -27,18 +26,12 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: [
-          "style-loader",
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "resolve-url-loader",
-        ],
+        use: ["style-loader", "css-loader", "resolve-url-loader"],
       },
       {
         test: /\.scss$/,
         use: [
           "style-loader",
-          MiniCssExtractPlugin.loader,
           "css-loader",
           "resolve-url-loader",
           "sass-loader",
@@ -79,9 +72,5 @@ module.exports = {
       inject: true,
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new MiniCssExtractPlugin({
-      filename: "assets/css/[name].[hash:7].bundle.css",
-      chunkFilename: "[id].css",
-    }),
   ],
 };
