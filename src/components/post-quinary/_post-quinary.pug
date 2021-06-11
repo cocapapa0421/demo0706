@@ -1,0 +1,48 @@
+mixin post-quinary(props = {})
+  -
+    const defaultProps = {
+      hasBookmark: false,
+      categoryOnTop: false,
+      avatarOnTop: false,
+      iconSave: 'las la-bookmark',
+      views: '240 Views',
+      viewsIcon: 'las la-arrow-up',
+      comments: '2 Comments',
+      commentsIcon: 'las la-comment'
+    }
+
+    const _props = Object.assign({}, defaultProps, props)
+
+  +component('article', 'post-quinary', props, false)&attributes(attributes)
+    +link().post-quinary__thumb.aspect-ratio
+      +img(_props.thumb || random(api.post.thumb)).img-cover
+
+    if _props.hasBookmark
+      +link().post-quinary__bookmark
+        i(class=_props.iconSave)
+
+    if _props.categoryOnTop
+      +link().post-quinary__category.post-quinary__category--top=_props.category || random(api.post.categories)
+
+    if _props.avatarOnTop
+      +link().post-quinary__author.flex.flex-middle
+        div.post-quinary__avatar
+          +img(_props.avatar || random(api.post.avatar)).img-cover
+        span.post-quinary__author-name.ml-5=_props.name || random(api.post.author)
+    else
+      +link().post-quinary__avatar.post-quinary__avatar--bottom.post-quinary__avatar--border.block
+        +img(_props.avatar || random(api.post.avatar)).img-cover
+
+    div(class=`post-quinary__info ${!_props.avatarOnTop ? 'post-quinary__info--bottom' : ''}`)
+      if !_props.categoryOnTop
+        +link().post-quinary__category=_props.category || random(api.post.categories)
+
+      +heading({className: 'post-quinary__title truncate-text-2', linkClassName: 'post-quinary__title-link', title: _props.title})
+
+      div.post-quinary__statistic.p-statistic.flex.flex-middle
+        +link().flex
+          i(class=_props.viewsIcon)
+          span=_props.views
+        +link().flex
+          i(class=_props.commentsIcon)
+          span=_props.comments

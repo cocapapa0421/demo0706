@@ -1,20 +1,19 @@
 .button {
   display: inline-flex;
-  background-color: transparent;
-  padding: 1rem 1.5rem;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  font-size: 1.5rem;
-  text-decoration: none;
-  box-shadow: none;
-}
-
-.button--size-s,
-.button--size-m,
-.button--size-l {
   align-items: center;
   justify-content: center;
+  padding: rem(5) rem(12.5);
+  border: 1px solid transparent;
+  background-color: transparent;
+  border-radius: rem(5);
+  box-shadow: none;
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.25s ease-in-out;
 }
 
 .button--size-l {
@@ -22,8 +21,34 @@
   font-size: rem(20);
 }
 
+.button--size-xxl {
+  padding: rem(15) rem(20);
+  min-width: rem(165);
+  border-radius: rem(28);
+  font-weight: $font-medium;
+
+  @include media(">xs") {
+    min-width: rem(218);
+    font-size: rem(16);
+    font-weight: $font-bold;
+    line-height: rem(26);
+  }
+}
+
+.button--primary {
+  background-color: $primary-color;
+}
+
+.button--primary:hover {
+  background-color: darken($primary-color, 10%);
+}
+
 .button--gray {
   background-color: $color-gray-1;
+}
+
+.button--gray:hover {
+  background-color: darken($color-gray-1, 15%);
 }
 
 .button--circle {

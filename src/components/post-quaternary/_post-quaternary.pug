@@ -1,0 +1,15 @@
+mixin post-quaternary(props = {})
+  +component('article', 'post-quaternary', props, false)&attributes(attributes)
+    div.post-quaternary__publish
+      span.post-quaternary__date.block=props.date || random(1, 30)
+      span.post-quaternary__month.block=props.month || random(api.post.months)
+    +heading({className: 'post-quaternary__title truncate-text-2', linkClassName: 'post-quaternary__title-link', title: props.title})
+    div.flex.flex-between-middle
+      .post-meta.flex.flex-middle
+        +link().post-meta__avatar
+          +img(props.avatar || random(api.post.avatar)).img-cover
+        +link().post-meta__author By #[span.post-meta__name=props.author || random(api.post.author)]
+        span.post-meta__dot &#8226;
+        +link().post-meta__category=props.category || random(api.post.categories)
+      +link()(data-tooltip="Save").button-save
+        i(class=props.saveIcon || 'las la-bookmark')
