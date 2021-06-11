@@ -1,0 +1,125 @@
+.post-octonary {
+  @include relative;
+  z-index: 1;
+  border-radius: rem(10);
+  overflow: hidden;
+
+  @include media(">=sm") {
+    border-radius: rem(15);
+  }
+
+  @include media(">=md") {
+    border-radius: rem(20);
+  }
+
+  @include media(">=xl") {
+    border-radius: rem(30);
+  }
+}
+
+.post-octonary__thumb {
+  padding-top: mathSizeImage(511, 733);
+}
+
+.post-octonary__thumb:after {
+  @include absolute(0, 0, 0, 0);
+  content: "";
+  background: linear-gradient(
+    180deg,
+    rgba($color-white, 0.0001) 0%,
+    rgba($secondary-color, 0.3) 100%
+  );
+  overflow: hidden;
+}
+
+.post-octonary__info {
+  @include absolute(null, rem(10), rem(10), rem(10));
+  z-index: 1;
+  padding: rem(10) rem(10);
+  border-radius: rem(10);
+  background-color: rgba($color-white, 0.2);
+  backdrop-filter: blur(27px);
+  color: $color-white;
+  font-size: rem(14);
+
+  @include media(">=sm") {
+    right: rem(15);
+    bottom: rem(15);
+    left: rem(15);
+    padding: rem(15) rem(15);
+    border-radius: rem(15);
+  }
+
+  @include media(">=xl") {
+    padding: rem(28) rem(30);
+    border-radius: rem(22);
+  }
+}
+
+.post-octonary__category {
+  display: inline-block;
+  padding: rem(9) rem(15);
+  border-radius: rem(17);
+  background-color: $primary-color;
+  color: $secondary-color;
+  font-size: rem(13);
+  font-weight: $font-medium;
+  transition: 0.25s ease-in-out;
+}
+
+.post-octonary__category:hover {
+  background-color: darken($primary-color, 10%);
+}
+
+.post-octonary__title {
+  margin-top: rem(10);
+  margin-bottom: rem(10);
+  height: rem(42);
+
+  @include media(">=lg") {
+    padding-right: rem(65);
+    height: rem(62);
+    font-size: rem(24);
+  }
+
+  @include media(">=xl") {
+    padding-right: rem(85);
+    height: rem(78);
+    font-size: rem(30);
+  }
+}
+
+.post-octonary__detail {
+  @include absolute;
+  @include size(rem(50));
+  @include flex($align: center, $justify: center);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  border-radius: rem(15);
+  background-color: rgba($secondary-color, 0.3);
+  backdrop-filter: blur(27px);
+  color: $primary-color;
+  font-size: rem(22);
+
+  @include media(">=sm") {
+    right: rem(15);
+  }
+
+  @include media(">=xl") {
+    @include size(rem(65));
+    right: rem(28);
+    border-radius: rem(22);
+  }
+}
+
+.post-octonary__meta > :not(:first-child) {
+  margin-left: rem(10);
+}
+
+.post-octonary__avatar {
+  @include size(rem(28));
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+}
