@@ -33,3 +33,23 @@
 .home-tabs-content__item + .home-tabs-content__item {
   margin-top: rem(20);
 }
+
+/* 2. Author
+========================================================== */
+.author-section__desc {
+  padding-top: rem(20);
+  padding-bottom: rem(20);
+  line-height: rem(26);
+
+  @include media(">=xl") {
+    width: 50%;
+  }
+}
+
+.author-section__foot {
+  margin-top: rem(30);
+
+  @include media(">=xl") {
+    margin-top: rem(40);
+  }
+}

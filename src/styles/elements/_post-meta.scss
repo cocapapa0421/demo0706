@@ -1,0 +1,22 @@
+.post-meta {
+  color: $color-gray-5;
+  font-size: rem(13);
+  font-weight: $font-medium;
+}
+
+.post-meta > *:not(:first-child) {
+  margin-left: rem(8);
+}
+
+.post-meta__avatar {
+  @include size(rem(28));
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.post-meta__name,
+.post-meta__category {
+  color: $secondary-color;
+  font-weight: $font-bold;
+}

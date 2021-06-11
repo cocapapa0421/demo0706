@@ -1,0 +1,51 @@
+.category {
+  @include relative;
+  border-radius: rem(5);
+  font-size: rem(14);
+  font-weight: $font-bold;
+  overflow: hidden;
+
+  @include media(">sm") {
+    border-radius: rem(10);
+  }
+
+  @include media(">=xl") {
+    border-radius: rem(30);
+  }
+}
+
+.category__cover {
+  padding-top: mathSizeImage(177, 295);
+}
+
+.category__info {
+  @include absolute(null, rem(10), rem(10), rem(10));
+  padding: rem(8) rem(8) rem(8) rem(15);
+  background-color: rgba($primary-color, 0.8);
+  backdrop-filter: blur(16px);
+  border-radius: rem(24);
+}
+
+.category__statistic {
+  font-size: rem(12);
+  font-weight: $font-medium;
+}
+
+.category__post-thumb {
+  @include relative;
+  @include size(rem(32));
+  display: inline-block;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.category__post-thumb:nth-child(1) {
+  margin-right: -#{rem(15)};
+  z-index: 2;
+}
+
+.category__post-thumb:nth-child(2) {
+  margin-right: -#{rem(15)};
+  z-index: 1;
+}

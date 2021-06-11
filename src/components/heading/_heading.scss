@@ -5,9 +5,13 @@
 }
 
 .heading--size-m {
-  font-size: rem(32);
+  @include media(">=xl") {
+    font-size: rem(32);
+  }
 }
 
 .heading--size-l {
-  font-size: rem(44);
+  @include media(">=xl") {
+    font-size: rem(44);
+  }
 }

@@ -2,13 +2,18 @@ extends core/layout
 
 include components/section/_section
 include components/heading/_heading
+include components/category/_category
 include components/post-primary/_post-primary
 include components/post-secondary/_post-secondary
 include components/post-tertiary/_post-tertiary
+include components/post-quaternary/_post-quaternary
+include components/post-quinary/_post-quinary
 include components/post-septenary/_post-septenary
 include components/subscribe/_subscribe
 include components/tabs/_tabs
 include components/author/_author
+
+//- include components/**/*.pug
 
 block stylesheet
   link(rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css")
@@ -18,6 +23,63 @@ block header
 
 
 block content
+  //- Category
+  +section()
+    header.section__head
+      +heading({tag: 'h2', title: 'Category'})
+
+    +row().grid--huge
+      +col({cols: [12, 6, 6, 3]})
+        +category({title: 'Apps', cover: './images/post1.jpg', thumbs: ['./images/thumb2.jpg', './images/thumb3.jpg', './images/thumb4.jpg']})
+      +col({cols: [12, 6, 6, 3]})
+        +category({title: 'Boxing', cover: './images/post2.jpg', thumbs: ['./images/thumb5.jpg', './images/thumb6.jpg', './images/thumb7.jpg']})
+      +col({cols: [12, 6, 6, 3]})
+        +category({title: 'Bohemian', cover: './images/post3.jpg', thumbs: ['./images/thumb8.jpg', './images/thumb9.jpg', './images/thumb10.jpg']})
+      +col({cols: [12, 6, 6, 3]})
+        +category({title: 'Artsy Style', cover: './images/post4.jpg', thumbs: ['./images/thumb11.jpg', './images/thumb12.jpg', './images/thumb13.jpg']})
+
+  //- Popular Posts
+  +section()
+    header.section__head.flex.flex-between-middle
+      +heading({tag: 'h2', title: 'Popular Posts'})
+    +row().grid--huge
+      +col({cols: [12, 6, 6, 3]})
+        +post-quinary({thumb: './images/post8.jpg', categoryOnTop: true, avatarOnTop: true})
+      +col({cols: [12, 6, 6, 3]})
+        +post-quinary({thumb: './images/post9.jpg', categoryOnTop: true, avatarOnTop: true})
+      +col({cols: [12, 6, 6, 3]})
+        +post-quinary({thumb: './images/post10.jpg', categoryOnTop: true, avatarOnTop: true})
+      +col({cols: [12, 6, 6, 3]})
+        +post-quinary({thumb: './images/post11.jpg', categoryOnTop: true, avatarOnTop: true})
+
+  //- Viewed Posts
+  +section().section--background-2.section--rounded
+    header.section__head.flex.flex-between-middle
+      +heading({tag: 'h2', title: 'Viewed Posts'})
+
+    +row()
+      +col({cols: [12, 12, 12, 3 ]})
+        .post-grid
+          .post-grid__item
+            +post-quaternary({title: 'Laudem et inter argumentum conclusionemque', avatar: './images/thumb15.jpg'})
+          .post-grid__item
+            +post-quaternary({title: 'Sorry, but you can\’t copyright a meme', avatar: './images/thumb16.jpg'})
+
+      +col({cols: [12, 12, 12, 6]})
+        +row().grid--small
+          +col({cols: [12, 6, 6, 6]})
+            +post-quinary({hasBookmark: true, thumb: './images/post12.jpg', title: 'Free Philippine Real Estate Ads'})
+          +col({cols: [12, 6, 6, 6]})
+            +post-quinary({hasBookmark: true, thumb: './images/post13.jpg', title: 'Torquem detraxit hosti et quidem se'})
+
+      +col({cols: [12, 12, 12, 3 ]})
+        .post-grid.post-grid--medium
+          .post-grid__item
+            +post-quaternary({title: 'Hanc ego cum teneam sententiam, quid malum', avatar: './images/thumb17.jpg'})
+          .post-grid__item
+            +post-quaternary({title: 'Filium morte multavit si sine causa, mox videro', avatar: './images/thumb18.jpg'})
+
+  //- Top Author
   +section().author-section
     header.section__head
       +heading({tag: 'h2', title: 'Top Author'}).heading--size-l
@@ -37,12 +99,15 @@ block content
         +author({avatar: './images/author5.jpg', name: 'Eden Tuan', posts: '5 Posts'})
 
     div.author-section__foot.text-center
-      div.button-groups.flex.flex-middle
+      div.flex.flex-middle.flex-center
+        +button({tag: 'a'}).button--size-xxl.button--gray
+          | See all authors
+        +button({tag: 'a'}).button--size-xxl.button--primary.ml-10
+          | Become an author
 
 
 
-
-  +section().section--collapse-top.ads
+  +section().section--collapse-top.ads.visible-desktop
     +link()
       +img('./images/banner.jpg')
 

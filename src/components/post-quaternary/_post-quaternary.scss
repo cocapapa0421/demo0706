@@ -1,0 +1,38 @@
+.post-quaternary {
+  padding: rem(10) rem(10);
+  border-radius: rem(10);
+  background-color: $color-white;
+
+  @include media(">=sm") {
+    padding: rem(15) rem(15);
+    border-radius: rem(15);
+  }
+
+  @include media(">=xl") {
+    padding: rem(20) rem(20);
+    border-radius: rem(30);
+  }
+}
+
+.post-quaternary__publish {
+  display: inline-block;
+  min-width: rem(69);
+  padding: rem(8) rem(20);
+  border-radius: rem(22);
+  background-color: rgba($primary-color, 0.8);
+  font-size: rem(11);
+  font-weight: $font-bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.post-quaternary__date {
+  font-size: rem(22);
+}
+
+.post-quaternary__title {
+  margin-top: rem(10);
+  margin-bottom: rem(10);
+  height: rem(42);
+  font-size: rem(16);
+}

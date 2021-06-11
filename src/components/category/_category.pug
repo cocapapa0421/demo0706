@@ -1,0 +1,13 @@
+mixin category(props = {})
+  +component('article', 'category', props, false)&attributes(attributes)
+    +link().category__cover.aspect-ratio
+      +img(props.cover || random(api.post.thumb)).img-cover
+    div.category__info.flex.flex-between-middle
+      +heading({className: 'category__title', linkClassName: 'category__title-text', title: props.title})
+      div.category__statistic.flex.flex-middle
+        +link()=props.posts || '23 posts'
+        if props.thumbs
+          div.category__posts.ml-5
+            each thumb in props.thumbs
+              +link().category__post-thumb
+                +img(thumb)
