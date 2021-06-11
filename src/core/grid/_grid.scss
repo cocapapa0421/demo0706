@@ -30,6 +30,18 @@
   }
 }
 
+.grid + .grid {
+  margin-top: rem(10);
+
+  @include media(">=sm") {
+    margin-top: rem(15);
+  }
+
+  @include media(">=xl") {
+    margin-top: rem(20);
+  }
+}
+
 .grid--small {
   @include media(">=xl") {
     margin-right: -#{($grid-gutter-medium - 5px) / 2};

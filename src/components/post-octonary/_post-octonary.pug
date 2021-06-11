@@ -1,0 +1,16 @@
+mixin post-octonary(props = {})
+  +component('article', 'post-octonary', props, {})&attributes(attributes)
+    +link().post-octonary__thumb.aspect-ratio
+      +img(props.thumb || random(api.post.thumb)).img-cover
+    div.post-octonary__info
+      +link().post-octonary__category=props.category || random(api.post.categories)
+      +heading({className: 'post-octonary__title', linkClassName: 'post-octonary__title-link', title: props.title})
+      +link().post-octonary__detail.visible-desktop
+        i.las.la-arrow-right
+      .post-octonary__meta.flex.flex-middle
+        +link().post-octonary__avatar
+          +img(props.avatar || random(api.post.avatar)).img-cover
+        +link() By #[strong=props.authorName || random(api.post.author)]
+        span •
+        span=props.time || '25th November, 2020'
+

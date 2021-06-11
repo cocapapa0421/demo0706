@@ -1,0 +1,24 @@
+mixin post-nonary(props = {})
+  +component('article', 'post-nonary', props, false)&attributes(attributes)
+    +link().post-nonary__thumb-wrapper
+      .post-nonary__thumb.aspect-ratio
+        +img(props.thumb || random(api.post.thumb)).img-cover
+      if props.hasVideo
+        +button().post-nonary__play.button--circle
+          i.las.la-play
+
+    div.post-nonary__info
+      +heading({className: 'post-nonary__title truncate-text-2', linkClassName: 'post-nonary__title-link', title: props.title})
+      .post-meta.flex.flex-middle
+        +link().post-meta__avatar
+          +img(props.avatar || random(api.post.avatar)).img-cover
+        +link().post-meta__author By #[span.post-meta__name=props.author || random(api.post.author)]
+        span.post-meta__dot &#8226;
+        +link().post-meta__category=props.category || random(api.post.categories)
+
+    div.post-nonary__publish-box
+      div.post-nonary__publish
+        span.post-nonary__date.block=props.date || random(1, 30)
+        span.post-nonary__month.block=props.month || random(api.post.months)
+      +link().post-nonary__detail
+        i.las.la-arrow-right

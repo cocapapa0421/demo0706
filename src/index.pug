@@ -9,6 +9,8 @@ include components/post-tertiary/_post-tertiary
 include components/post-quaternary/_post-quaternary
 include components/post-quinary/_post-quinary
 include components/post-septenary/_post-septenary
+include components/post-octonary/_post-octonary
+include components/post-nonary/_post-nonary
 include components/subscribe/_subscribe
 include components/tabs/_tabs
 include components/author/_author
@@ -37,6 +39,36 @@ block content
         +category({title: 'Bohemian', cover: './images/post3.jpg', thumbs: ['./images/thumb8.jpg', './images/thumb9.jpg', './images/thumb10.jpg']})
       +col({cols: [12, 6, 6, 3]})
         +category({title: 'Artsy Style', cover: './images/post4.jpg', thumbs: ['./images/thumb11.jpg', './images/thumb12.jpg', './images/thumb13.jpg']})
+
+  //- Recent Posts
+  +section().section--background-1.section--rounded
+    header.section__head
+      +heading({tag: 'h2', title: 'Recent Posts'})
+
+    +row()
+      +col({cols: [12, 12, 12, 5]})
+        +row()
+          +col({cols: [12, 6, 6, 12]})
+            +post-nonary({thumb: './images/post20.jpg', title: "Hanc ego cum teneam sententiam, quid malu…"})
+          +col({cols: [12, 6, 6, 12]})
+            +post-nonary({thumb: './images/post21.jpg', title: "The warmest workout gear to keep"})
+          +col({cols: [12, 6, 6, 12]})
+            +post-nonary({hasVideo: true, thumb: './images/post22.jpg', title: "Boost your immune system for winter..."})
+
+      +col({cols: [12, 12, 12, 7]})
+        +post-octonary({thumb: "./images/post5.jpg", title: "At vero eos et accusamus et iusto odio dignissimos ducimus"})
+
+    +row()
+      +col({cols: [12, 6, 6, 3]})
+         +post-quaternary({title: 'Laudem et inter argumentum conclusionemque', avatar: './images/thumb20.jpg'})
+      +col({cols: [12, 6, 6, 3]})
+         +post-quaternary({title: 'Sorry, but you can\’t copyright a meme', avatar: './images/thumb21.jpg'})
+      +col({cols: [12, 6, 6, 3]})
+         +post-quaternary({title: 'Filium morte multavit si sine causa, mox videro', avatar: './images/thumb22.jpg'})
+      +col({cols: [12, 6, 6, 3]})
+         +post-quaternary({title: 'Hanc ego cum teneam sententiam, quid malum', avatar: './images/thumb23.jpg'})
+
+
 
   //- Popular Posts
   +section()
