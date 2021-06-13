@@ -1,7 +1,9 @@
 .post-senary {
   @include flex($align: center, $justify: space-between);
-  padding: rem(10);
+
   border-radius: rem(5);
+  padding: rem(10);
+
   background-color: rgba($color-white, 0.05);
   backdrop-filter: blur(27px);
 
@@ -10,29 +12,31 @@
   }
 
   @include media(">=xl") {
-    padding: rem(20) rem(20);
     border-radius: rem(30);
+    padding: rem(20) rem(20);
   }
 
   @include media(">=sm", "<lg") {
     position: relative;
     flex-direction: column;
+
     margin-top: rem(40);
     padding: rem(40) rem(10) rem(10);
   }
 }
 
 .post-senary__thumb {
+  overflow: hidden;
+  border-radius: 50%;
   width: rem(80);
   height: rem(80);
-  border-radius: 50%;
-  overflow: hidden;
 
   @include media(">=sm", "<lg") {
     position: absolute;
     top: -40px;
     left: 50%;
     transform: translateX(-50%);
+
     border: 3px solid $color-white;
   }
 }
@@ -46,7 +50,12 @@
 
 .post-senary__title {
   margin-bottom: rem(10);
-  height: rem(42);
+
+  font-weight: $font-medium;
+
+  @include media(">=sm") {
+    height: rem(42);
+  }
 }
 
 .post-senary__statistic {

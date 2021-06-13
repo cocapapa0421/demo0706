@@ -1,0 +1,18 @@
+.mob-sub-menu {
+  position: relative;
+  display: none;
+  border-bottom: 1px solid darken($color-gray-2, 5%);
+}
+
+.mob-sub-menu__link {
+  display: block;
+  padding: rem(10) rem(25) rem(10) rem(40);
+  font-size: rem(16);
+}
+
+.mob-sub-menu__link::before {
+  content: "\f101";
+  margin-right: rem(5);
+  font-family: "Line Awesome Free";
+  font-weight: 900;
+}

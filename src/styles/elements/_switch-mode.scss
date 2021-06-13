@@ -1,0 +1,55 @@
+.switch-mode {
+  @include flex(flex, null, null, space-between, center);
+
+  border: 2px solid $color-gray-2;
+  border-radius: rem(22);
+  min-width: rem(94);
+  padding: 4px 15px 4px 4px;
+
+  cursor: pointer;
+
+  font-size: rem(14);
+  font-weight: $font-medium;
+
+  transition: all 0.25s;
+}
+
+.switch-mode__item--light {
+  display: none;
+}
+
+.switch-mode__button {
+  @include flex(flex, null, null, center, center);
+  @include size(rem(32));
+
+  border-radius: 50%;
+  background-color: $primary-color;
+
+  font-size: rem(22);
+  pointer-events: none;
+}
+
+#switch-mode {
+  position: absolute;
+  display: none;
+  opacity: 0;
+}
+
+#switch-mode:checked ~ .switch-mode {
+  border-color: $secondary-color;
+  padding: 4px 4px 4px 15px;
+  background-color: $secondary-color;
+  color: $color-white;
+}
+
+#switch-mode:checked ~ .switch-mode .switch-mode__item--light {
+  display: block;
+}
+#switch-mode:checked ~ .switch-mode .switch-mode__item--dark {
+  display: none;
+}
+
+#switch-mode:checked ~ .switch-mode .switch-mode__button {
+  background-color: $color-white;
+  color: $secondary-color;
+}

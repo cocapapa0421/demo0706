@@ -1,0 +1,24 @@
+//- Search Form
+mixin search-form(props = {})
+  -
+    const defaultProps = {
+      className: 'search'
+    }
+    const _props = Object.assign({}, defaultProps, props)
+    const set = suffix => `${_props.className}__${suffix}`
+
+  +component('form', _props.className, props, false)
+    input(class=set('input'), type="text", placeholder=props.placeholder || 'Search travel, lifestyle…')
+    button(class=set('button'), type="button")
+      i.las.la-search
+
+//- Subscribe Form
+mixin subscribe-form(props = {})
+  +component('form', 'subscribe-form', props, false)&attributes(attributes)
+    div.subscribe-form__row
+      div.subscribe-form__input-wrapper
+        input.subscribe-form__input(type='text', placeholder='Enter your email address')
+        span.subscribe-form__input-icon
+          i.subscribe-form__icon.las.la-envelope
+    div.subscribe-form__row
+      +button().subscribe-form__button(type='submit')='Join now'

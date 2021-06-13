@@ -1,0 +1,39 @@
+.search {
+  @include flex(flex, null, null, center, space-between);
+
+  border: 2px solid $color-gray-2;
+  border-radius: rem(28);
+  width: rem(253);
+  padding: 4px 4px 4px 13px;
+
+  font-size: 14px;
+  line-height: 1;
+}
+
+.search__input {
+  @include media(">=lg") {
+    padding-right: 1rem;
+    flex: 1;
+  }
+}
+
+.search__input::placeholder {
+  font-size: rem(13);
+  color: $secondary-color-light-2;
+}
+
+.search__button {
+  @include flex(flex, null, null, center, center);
+  @include size(rem(32));
+  border-radius: 50%;
+  background-color: $primary-color;
+
+  font-size: rem(18);
+
+  transition: 0.25s ease-in;
+
+  &:hover {
+    background-color: darken($primary-color, 20%);
+    color: $color-white;
+  }
+}

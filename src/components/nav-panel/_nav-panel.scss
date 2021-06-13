@@ -1,14 +1,15 @@
 .nav-panel {
-  color: $color-gray-4;
   font-size: rem(14);
+  color: $color-gray-4;
 }
 
 .nav-panel__heading {
   margin-bottom: rem(22);
-  color: $color-white;
+
   font-weight: $font-medium;
   text-transform: uppercase;
   letter-spacing: 1.4px;
+  color: $color-white;
 }
 
 .nav-panel__item {

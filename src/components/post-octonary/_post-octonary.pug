@@ -4,8 +4,8 @@ mixin post-octonary(props = {})
       +img(props.thumb || random(api.post.thumb)).img-cover
     div.post-octonary__info
       +link().post-octonary__category=props.category || random(api.post.categories)
-      +heading({className: 'post-octonary__title', linkClassName: 'post-octonary__title-link', title: props.title})
-      +link().post-octonary__detail.visible-desktop
+      +heading({className: 'post-octonary__title truncate-text-2', linkClassName: 'post-octonary__title-link', title: props.title})
+      +link().post-octonary__detail
         i.las.la-arrow-right
       .post-octonary__meta.flex.flex-middle
         +link().post-octonary__avatar

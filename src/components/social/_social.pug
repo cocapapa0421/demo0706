@@ -1,0 +1,11 @@
+mixin social(props = {})
+  -
+    const defaultProps = {
+      tag: 'a',
+      className: 'social',
+    }
+    const _props = Object.assign({}, defaultProps, props)
+
+  +component(_props.tag, _props.className, props, false)&attributes(attributes)
+    if block
+      block

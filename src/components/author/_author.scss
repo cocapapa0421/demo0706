@@ -1,18 +1,22 @@
 .author {
   display: block;
-  padding: rem(10) rem(10);
+
   border: 2px solid $color-gray-2;
   border-radius: rem(10);
+  padding: rem(10) rem(10);
+
+  background-color: rgba($color-white, 0.6);
+
   text-align: center;
 
   @include media(">=md", "<lg") {
-    padding: rem(15) rem(15);
     border-radius: rem(15);
+    padding: rem(15) rem(15);
   }
 
   @include media(">=xl") {
-    padding: rem(20) rem(20);
     border-radius: rem(30);
+    padding: rem(20) rem(20);
   }
 }
 
@@ -22,23 +26,29 @@
 
 .author__avatar {
   @include size(rem(80));
+
   display: block;
+
+  overflow: hidden;
+
   margin-right: auto;
   margin-left: auto;
   border-radius: 50%;
-  overflow: hidden;
 }
 
 .author__name {
   margin-top: rem(10);
   margin-bottom: rem(5);
   max-height: rem(23);
+
   font-size: rem(18);
 }
 
 .author__posts {
   display: block;
+
   margin-bottom: rem(30);
+
   font-size: rem(14);
   font-weight: $font-medium;
 }

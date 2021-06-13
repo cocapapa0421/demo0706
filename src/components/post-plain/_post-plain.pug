@@ -1,0 +1,19 @@
+mixin post-plain(props = {})
+  -
+    const defaultProps = {
+      views: '240 Views',
+      viewsIcon: 'las la-arrow-up',
+      comments: '2 Comments',
+      commentsIcon: 'las la-comment'
+    }
+    const _props = Object.assign({}, defaultProps, props)
+
+  +component('article', 'post-plain', props, false)
+    +heading({className: 'post-plain__title truncate-text-2', linkClassName: 'post-plain__title-link', title: _props.title})
+    div.p-statistic.flex.flex-middle
+      +link().flex
+        i(class=_props.viewsIcon)
+        span=_props.views
+      +link().flex
+        i(class=_props.commentsIcon)
+        span=_props.comments

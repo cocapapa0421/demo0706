@@ -1,0 +1,39 @@
+.post-plain {
+  border: 2px solid $color-gray-2;
+  border-radius: rem(10);
+  height: 100%;
+  padding: rem(10) rem(10);
+
+  background-color: rgba(255, 255, 255, 0.6);
+
+  @include media(">=sm") {
+    padding: rem(15) rem(15);
+    border-radius: rem(15);
+  }
+
+  @include media(">=xl") {
+    padding: rem(20) rem(30);
+    border-radius: rem(30);
+  }
+}
+
+.post-plain::before {
+  content: "0" counter(post-order);
+  display: block;
+  margin-bottom: 1rem;
+
+  font-size: rem(24);
+  line-height: rem(31);
+  font-weight: 700;
+  color: $color-gray-4;
+}
+
+.post-plain__title {
+  margin-bottom: rem(10);
+
+  font-size: rem(16);
+
+  @include media(">=sm") {
+    height: rem(42);
+  }
+}

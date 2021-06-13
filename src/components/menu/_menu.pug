@@ -1,0 +1,36 @@
+mixin menu(props = {})
+  -
+    const defaultProps = {
+      containerTag: 'nav',
+      className: 'menu',
+      items: [
+        { content: 'Home' },
+        {
+          content: 'Pages',
+          hasChild: true,
+          childItems: [ 'Photos', 'Movies', 'Foot ball', 'Contact' ],
+          icon: 'las la-angle-down',
+        },
+        { content: 'Sport' },
+        { content: 'LifeStyle' },
+        { content: 'Design' },
+      ],
+      indexActive: null,
+      subMenuClassName: 'sub-menu'
+    }
+    const _props = Object.assign({}, defaultProps, props)
+    const set = (suffix, prefix = _props.className) => `${prefix}__${suffix}`
+
+  +component(_props.containerTag, _props.className, null, false)&attributes(attributes)
+    ul(class=set('list'))
+      each item, idx in _props.items
+        li(class=set('item'), class=item.hasChild ? 'has-sub-menu' : '', class=(_props.indexActive == idx ? 'is-active' : ''))
+          +link()(class=set('link'))=item.content
+            if item.icon
+              i(class=item.icon)
+
+          if item.hasChild && item.childItems
+            +list({className: _props.subMenuClassName, items: item.childItems, hasLink: true})
+
+
+

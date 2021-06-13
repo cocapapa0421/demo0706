@@ -64,6 +64,6 @@ mixin col(props = {})
     }
 
     const _props = Object.assign({}, defaultProps, props)
-  +component('div', null, props, false)(class=get(_props.cols))
+  +component('div', null, props, false)(class=get(_props.cols))&attributes(attributes)
     if (block)
       block

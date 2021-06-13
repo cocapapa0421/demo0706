@@ -1,0 +1,26 @@
+.mob-header {
+  @include relative;
+  z-index: 10;
+  box-shadow: 0 rem(5) rem(10) rgba($color-gray-3, 0.5);
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+
+  background-color: $color-white;
+}
+
+.mob-header__wrapper {
+  @include flex(flex, null, null, space-between, center);
+}
+
+.mob-header__logo {
+  max-width: rem(100);
+}
+
+.mob-header__button {
+  border: none;
+  background: none;
+  outline: none;
+  font-size: rem(28);
+  font-weight: $font-bold;
+  color: $secondary-color;
+}

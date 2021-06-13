@@ -1,0 +1,31 @@
+mixin post-denary(props = {})
+  -
+    const defaultProps = {
+      hasSliderButtons: false,
+      time: '25th November, 2020'
+    }
+
+    const _props = Object.assign({}, defaultProps, props)
+
+  +component('article', 'post-denary', props, false)&attributes(attribute)
+    div.post-denary__thumb-wrapper
+      +link().post-denary__thumb.aspect-ratio
+        +img(_props.thumb || random(api.post.thumb)).img-cover
+
+    div.post-denary__info
+      +link().post-denary__category=_props.category || random(api.post.categories)
+      +heading({className: 'post-denary__title', linkClassName: 'post-denary__title-link', title: _props.title})
+      .post-denary__meta.flex.flex-middle
+        +link().post-denary__avatar
+          +img(_props.avatar || random(api.post.avatar)).img-cover
+        +link() By #[strong=_props.authorName || random(api.post.author)]
+        span •
+        strong=_props.time
+
+      if _props.hasSliderButtons
+        .post-denary__button-group
+          +button().post-denary__prev.button--size-l.button--circle
+            i.las.la-angle-left
+          +button().post-denary__prev.button--size-l.button--circle
+            i.las.la-angle-right
+

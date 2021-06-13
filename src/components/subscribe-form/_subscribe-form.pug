@@ -1,9 +1,0 @@
-mixin subscribe-form(props = {})
-  +component('form', 'subscribe-form', props, false)&attributes(attributes)
-    div.subscribe-form__row
-      div.subscribe-form__input-wrapper
-        input.subscribe-form__input(type='text', placeholder='Enter your email address')
-        span.subscribe-form__input-icon
-          i.subscribe-form__icon.las.la-envelope
-    div.subscribe-form__row
-      +button().subscribe-form__button(type='submit')='Join now'

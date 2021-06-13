@@ -1,0 +1,17 @@
+.social {
+  @include flex(flex, null, null, center, center);
+  @include size(rem(44));
+
+  border-radius: 50%;
+  font-size: rem(18);
+}
+
+.social--border {
+  border: 2px solid $color-gray-2;
+}
+
+.social--blur {
+  background-color: rgba($color-white, 0.06);
+  backdrop-filter: blur(16);
+  color: $primary-color;
+}

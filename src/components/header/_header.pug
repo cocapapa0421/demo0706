@@ -1,0 +1,74 @@
+//- Desktop header
++component('header', 'header').visible-desktop
+  .header__upper
+    .container
+      .header__wrapper
+        +search-form()
+
+        +link().header__logo.mlr-auto
+          +img('../../images/logo.png')
+
+        .socials-grid
+          +social().social--border
+            i.lab.la-facebook-f
+          +social().social--border
+            i.lab.la-youtube
+          +social().social--border
+            i.lab.la-twitter
+
+  .header__navigation
+    .container
+      .header__wrapper
+        +button().button--size-l.button--circle.button--outline-gray
+          i.las.la-bars
+
+        +menu({className: 'main-menu', indexActive: 0})
+
+        .header__toolbox
+          input.u-hidden(type="checkbox" id="switch-mode")
+          label(for="switch-mode").switch-mode
+            span.switch-mode__item.switch-mode__item--light Light
+            button.switch-mode__button
+              i.las.la-moon
+            span.switch-mode__item.switch-mode__item--dark Dark
+
+          +button().button--size-l.button--circle.button--outline-gray
+            i.las.la-user
+
+
+//- Mobile header
++component('header', 'mob-header').hidden-desktop
+  .container
+    .mob-header__wrapper
+      button.mob-header__button.jsOpenMobileMenu(data-mob-action="open" data-open-target='open-mobile-menu')
+        i.las.la-bars
+      +link().mob-header__logo
+          +img('../../images/logo.png')
+      button.mob-header__button.jsOpenMobileSearch(data-mob-action="open" data-open-target='open-mobile-search')
+        i.las.la-search
+
++component('div', 'mob-navigation jsMobNavigation', null, false).hidden-desktop
+  div.mob-navigation__wrapper
+    +search-form({className: 'mob-search'})
+    +menu({
+      className: 'mob-main-menu',
+      subMenuClassName: 'mob-sub-menu',
+      items: [
+        { content: 'Home' },
+        {
+          content: 'Pages',
+          hasChild: true,
+          childItems: [ 'Photos', 'Movies', 'Foot ball', 'Contact' ],
+          icon: 'las la-angle-right jsMobMenuIcon',
+        },
+        { content: 'Sport' },
+        { content: 'LifeStyle' },
+        { content: 'Design' },
+        {
+          content: 'Contact Us',
+          hasChild: true,
+          childItems: [ 'Photos', 'Movies', 'Foot ball', 'Contact' ],
+          icon: 'las la-angle-right',
+        },
+      ],
+    }).jsMobMainMenu

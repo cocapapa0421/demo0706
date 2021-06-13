@@ -1,8 +1,11 @@
 .post-primary {
-  border-radius: 5px;
-  background-color: $color-white;
-  font-size: rem(14);
   overflow: hidden;
+
+  border-radius: 5px;
+
+  background-color: $color-white;
+
+  font-size: rem(14);
 
   @include media("<lg") {
     border: 1px solid $color-gray-3;
@@ -32,24 +35,41 @@
 .post-primary__meta {
   @extend %flex-middle;
   @extend %font-medium;
-}
 
-.post-primary__meta > *:not(:first-child) {
-  margin-left: rem(10);
+  > :not(:last-child) {
+    margin-right: rem(10);
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1269px),
+    (max-width: 479px) {
+    > :nth-child(n + 3) {
+      display: none;
+    }
+  }
 }
 
 .post-primary__title {
-  height: rem(42);
-  margin-top: rem(15);
-  margin-bottom: rem(20);
+  margin-top: rem(10);
+  margin-bottom: rem(10);
+
   font-size: rem(16);
+
+  @include media(">=sm") {
+    height: rem(42);
+  }
+
+  @include media(">=xl") {
+    margin-top: rem(15);
+    margin-bottom: rem(20);
+  }
 }
 
 .post-primary__avatar {
   @include size(rem(40));
   display: block;
-  border-radius: rem(10);
   overflow: hidden;
+
+  border-radius: rem(10);
 }
 
 .post-primary__time {

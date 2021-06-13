@@ -184,3 +184,11 @@
     }
   }
 }
+
+.grid--counter {
+  counter-reset: reset;
+}
+
+.grid--counter > * {
+  counter-increment: post-order;
+}

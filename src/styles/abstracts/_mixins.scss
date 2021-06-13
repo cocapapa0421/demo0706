@@ -110,20 +110,20 @@
     @if $val == "tn" {
       @for $i from 1 through $cols {
         &-#{$i} {
-          flex-basis: colWidth($i, $cols);
+          width: colWidth($i, $cols);
         }
       }
     } @else if $val == "xs" {
       @for $i from 1 through $cols {
         &-#{$val}-#{$i} {
-          flex-basis: colWidth($i, $cols);
+          width: colWidth($i, $cols);
         }
       }
     } @else {
       @for $i from 1 through $cols {
         &-#{$val}-#{$i} {
           @include media(">=#{$val}") {
-            flex-basis: colWidth($i, $cols);
+            width: colWidth($i, $cols);
           }
         }
       }

@@ -1,9 +1,12 @@
 .category {
   @include relative;
+
+  overflow: hidden;
+
   border-radius: rem(5);
+
   font-size: rem(14);
   font-weight: $font-bold;
-  overflow: hidden;
 
   @include media(">sm") {
     border-radius: rem(10);
@@ -20,10 +23,12 @@
 
 .category__info {
   @include absolute(null, rem(10), rem(10), rem(10));
+
+  border-radius: rem(24);
   padding: rem(8) rem(8) rem(8) rem(15);
+
   background-color: rgba($primary-color, 0.8);
   backdrop-filter: blur(16px);
-  border-radius: rem(24);
 }
 
 .category__statistic {
@@ -31,21 +36,33 @@
   font-weight: $font-medium;
 }
 
+.category__posts {
+  @media only screen and (min-width: 1024px) and (max-width: 1269px),
+    (max-width: 479px) {
+    display: none;
+  }
+}
+
 .category__post-thumb {
   @include relative;
   @include size(rem(32));
+
   display: inline-block;
+
+  overflow: hidden;
+
   border: 2px solid #fff;
   border-radius: 50%;
-  overflow: hidden;
 }
 
 .category__post-thumb:nth-child(1) {
-  margin-right: -#{rem(15)};
   z-index: 2;
+
+  margin-right: -#{rem(15)};
 }
 
 .category__post-thumb:nth-child(2) {
-  margin-right: -#{rem(15)};
   z-index: 1;
+
+  margin-right: -#{rem(15)};
 }

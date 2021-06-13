@@ -1,0 +1,29 @@
+.mob-main-menu {
+  position: relative;
+  display: none;
+  overflow: hidden;
+
+  width: 100%;
+  height: 100%;
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+
+  background-color: $color-white;
+
+  font-size: rem(17);
+}
+
+.mob-main-menu__item {
+  position: relative;
+}
+
+.mob-main-menu__link {
+  @include flex(flex, null, null, space-between, center);
+
+  padding: rem(10) rem(25);
+  border-bottom: 1px solid darken($color-gray-2, 5%);
+}
+
+.mob-main-menu__item.is-active .mob-sub-menu {
+  display: block;
+}

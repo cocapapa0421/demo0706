@@ -1,0 +1,43 @@
+.sub-menu {
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+
+  display: none;
+  overflow: hidden;
+
+  box-shadow: 5px 5px 10px rgba($color-black, 0.1);
+  border: thin solid $color-gray-3;
+  border-radius: 5px;
+  min-width: rem(200);
+
+  background-color: $color-white;
+  backdrop-filter: blur(100px);
+}
+
+.sub-menu__link {
+  display: block;
+  padding: rem(10) rem(10) rem(10) rem(15);
+
+  transition: padding-left 0.25s ease;
+}
+
+.sub-menu__item:not(:first-child) .sub-menu__link {
+  border-top: thin dashed $color-gray-3;
+}
+
+.sub-menu__item:hover .sub-menu__link {
+  padding-left: rem(20);
+  background-color: $primary-color;
+}
+
+.sub-menu__link:before {
+  content: "\f101";
+
+  display: inline-block;
+
+  margin-right: 4px;
+
+  font-family: "Line Awesome Free";
+  font-weight: 900;
+}

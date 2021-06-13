@@ -1,17 +1,18 @@
 .subscribe {
+  border-radius: rem(10);
   padding: rem(10) rem(10);
+
   background-color: $secondary-color-light-1;
-  border-radius: 5px;
+
   color: $primary-color;
 
   @include media(">=sm") {
     padding: rem(15) rem(15);
-    border-radius: rem(10);
   }
 
   @include media(">=xl") {
-    padding: rem(30) rem(30);
     border-radius: rem(30);
+    padding: rem(30) rem(30);
   }
 }
 
@@ -25,11 +26,16 @@
   @include media(">=xl") {
     font-size: rem(32);
   }
+
+  @include media("<lg") {
+    text-align: center;
+  }
 }
 
 .subscribe__thumb {
   margin-top: rem(15);
   margin-bottom: rem(15);
+
   text-align: center;
 
   @include media(">=sm") {
@@ -42,40 +48,3 @@
     margin-bottom: rem(30);
   }
 }
-
-// .subscribe__row + .subscribe__row {
-//   margin-top: 10px;
-//   @include media(">=#{$container}") {
-//     margin-top: rem(20);
-//   }
-// }
-
-// .subscribe__input-wrapper {
-//   padding: rem(15) rem(20);
-//   border: 2px solid rgba($color-white, 0.2);
-//   border-radius: rem(28);
-//   line-height: rem(26);
-// }
-
-// .subscribe__input {
-//   flex: 1;
-// }
-
-// .subscribe__icon {
-//   font-size: rem(22);
-//   font-weight: $fw-regular;
-// }
-
-// .subscribe__input::placeholder {
-//   color: $color-gray-2;
-// }
-
-// .subscribe__button {
-//   display: block;
-//   width: 100%;
-//   padding: rem(15) rem(15);
-//   border-radius: rem(28);
-//   color: $primary-color;
-//   font-weight: $fw-bold;
-//   line-height: rem(26);
-// }

@@ -1,0 +1,32 @@
+.header__wrapper {
+  @include media(">=lg") {
+    display: grid;
+    grid-template-columns: 1fr 3fr min-content;
+    align-items: center;
+  }
+
+  @include media(">xl") {
+    grid-template-columns: 1fr 5fr min-content;
+  }
+}
+.header__upper {
+  @include media(">=xl") {
+    padding: rem(36) 0 rem(32);
+  }
+}
+
+.header__navigation {
+  @include media(">=lg") {
+    padding: rem(13) 0 rem(14);
+    border-top: 1px solid $color-gray-1;
+    border-bottom: 1px solid $color-gray-1;
+  }
+}
+
+.header__toolbox {
+  @include flex($align: center);
+}
+
+.header__toolbox > :not(:last-child) {
+  margin-right: rem(6);
+}

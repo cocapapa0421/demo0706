@@ -1,0 +1,156 @@
+.post-denary {
+  @include flex(flex, null, null, space-between, center);
+
+  font-size: rem(14);
+
+  @include media("<lg") {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.post-denary__info {
+  width: 100%;
+
+  @include media(">=lg") {
+    width: rem(394);
+    order: -1;
+  }
+
+  @include media("<lg") {
+    border: thin solid $color-gray-3;
+    border-bottom-right-radius: rem(10);
+    border-bottom-left-radius: rem(10);
+    padding: rem(10) rem(10);
+
+    background-color: $color-white;
+    mix-blend-mode: lighten;
+  }
+
+  @include media(">=sm", "<lg") {
+    padding: rem(15) rem(15);
+  }
+}
+
+.post-denary__category {
+  display: inline-block;
+
+  border-radius: rem(22);
+  min-width: rem(95);
+  padding: rem(13) rem(13);
+
+  background-color: $primary-color;
+
+  font-size: rem(13);
+  font-weight: $font-medium;
+  text-align: center;
+}
+
+.post-denary__title {
+  margin-top: rem(10);
+  margin-bottom: rem(10);
+
+  @include media(">=sm") {
+    margin-top: rem(15);
+    margin-bottom: rem(15);
+    font-size: rem(24);
+  }
+
+  @include media(">=lg") {
+    margin-top: rem(20);
+    margin-bottom: rem(20);
+
+    font-size: rem(32);
+  }
+
+  @include media(">xl") {
+    margin-top: rem(30);
+    margin-bottom: rem(30);
+
+    line-height: rem(52);
+    font-size: rem(44);
+  }
+}
+
+.post-denary__meta {
+  margin-bottom: rem(20);
+
+  @include media(">=md") {
+    margin-bottom: rem(40);
+  }
+}
+
+.post-denary__avatar {
+  @include size(rem(40));
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.post-denary__meta > *:not(:first-child) {
+  margin-left: rem(10);
+}
+
+.post-denary__thumb-wrapper {
+  width: 100%;
+
+  @include media(">=lg") {
+    width: calc(100% - #{rem(394)});
+    padding-left: rem(15);
+  }
+
+  @include media(">=xl") {
+    padding-left: rem(38);
+  }
+}
+
+.post-denary__thumb {
+  padding-top: mathSizeImage(471, 837);
+}
+
+.post-denary__thumb > img {
+  border-top-left-radius: rem(10);
+  border-top-right-radius: rem(10);
+
+  @include media(">=lg") {
+    border-radius: rem(15);
+  }
+
+  @include media(">=xl") {
+    border-radius: rem(30);
+  }
+}
+
+.post-denary__thumb:before {
+  @include absolute(rem(30), 0, 0, 0);
+  content: "";
+  opacity: 0.5;
+
+  border-radius: rem(30);
+  width: 100%;
+  height: 100%;
+  background-image: url("../../images/post40.jpg");
+
+  filter: blur(63px);
+  mix-blend-mode: normal;
+}
+
+.post-denary__prev,
+.post-denary__next {
+  background-color: $color-white;
+
+  font-size: rem(22);
+  color: $color-gray-3;
+
+  &:hover {
+    color: $secondary-color;
+  }
+
+  @include media("<lg") {
+    background-color: $primary-color;
+    color: $secondary-color-light-1;
+  }
+}
+
+.post-denary__prev {
+  margin-right: rem(10);
+}

@@ -18,30 +18,20 @@
     gap: rem(15);
   }
 
+  @include media("<xl") {
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  }
+
   @include media(">=xl") {
     gap: rem(30);
   }
 }
 
-// Post grid
-.post-grid {
-  @include flex(flex, wrap, row);
-}
+// Social grid
+.socials-grid {
+  @include flex($align: center);
 
-.post-grid__item {
-  width: 100%;
-
-  @include media(">=sm", "<lg") {
-    width: 50%;
-  }
-}
-
-.post-grid__item:nth-of-type(n + 2) {
-  @include media(">=lg") {
-    margin-top: rem(15);
-  }
-
-  @include media(">=xl") {
-    margin-top: rem(20);
+  > :not(:last-child) {
+    margin-right: rem(6);
   }
 }

@@ -1,3 +1,4 @@
+//- Link mixin
 mixin link(href)
   if !href
     a(href='#')&attributes(attributes)
@@ -5,9 +6,31 @@ mixin link(href)
         block
   else
     a(href=href)&attributes(attributes)
+      if block
+        block
 
+//- Image mixin
 mixin img(src, alt)
   if !alt
     img(src=src, alt='')&attributes(attributes)
   else
     img(src=src, alt=alt)&attributes(attributes)
+
+//- List mixin
+mixin list(props = {})
+  -
+    const defaultProps = {
+      className: 'list',
+      items: ['List Item 1', 'List Item 2', 'List Item 3', 'List Item 4', 'List Item 5'],
+      hasLink: false,
+    }
+    const _props = Object.assign({}, defaultProps, props)
+    const set = suffix => `${_props.className}__${suffix}`
+
+  ul(class=_props.className)&attributes(attributes)
+    each item in _props.items
+      li(class=set('item'))
+        if _props.hasLink
+          +link()(class=set('link'))=item
+        else
+          =item

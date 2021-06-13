@@ -10,23 +10,28 @@
 .post-tertiary__avatar,
 .post-tertiary__box {
   @include size(5rem);
-  border-radius: rem(10);
   overflow: hidden;
+
+  border-radius: rem(10);
 }
 
 .post-tertiary__box {
   padding: 7px 7px;
+
   background-color: $secondary-color-light-1;
-  color: $primary-color;
+
   font-size: rem(13);
   font-weight: $font-medium;
   text-align: center;
+  color: $primary-color;
 }
 
 .post-tertiary__content {
-  border-radius: 5px;
-  background-color: $color-white;
   overflow: hidden;
+
+  border-radius: 5px;
+
+  background-color: $color-white;
 
   @include media("<lg") {
     border: 1px solid $color-gray-3;
@@ -34,6 +39,7 @@
 
   @include media(">=lg") {
     width: calc(100% - 6.5rem);
+
     border-radius: rem(10);
   }
 
@@ -50,16 +56,21 @@
   @include flex($align: center, $justify: center);
   @include size(6rem);
   @include absolute($top: 50%, $left: 50%);
+
   transform: translate(-50%, -50%);
+
   border-radius: 50%;
+
   background-color: rgba($color-white, 0.3);
   backdrop-filter: blur(16.3097px);
+
   font-size: rem(30);
   color: $primary-color;
 }
 
 .post-tertiary__info {
   padding: rem(10) rem(10);
+
   @include media(">=lg") {
     padding: rem(20) rem(20);
   }
@@ -67,9 +78,12 @@
 
 .post-tertiary__category {
   display: inline-block;
-  padding: rem(9) rem(15);
-  background-color: $primary-color;
+
   border-radius: rem(17);
+  padding: rem(9) rem(15);
+
+  background-color: $primary-color;
+
   font-size: rem(12);
   font-weight: $font-medium;
 }
@@ -77,13 +91,17 @@
 .post-tertiary__title {
   margin-top: rem(10);
   margin-bottom: rem(10);
-  height: rem(58);
-  font-size: rem(22);
+
+  @include media(">sm") {
+    font-size: rem(22);
+    height: rem(58);
+  }
 }
 
 .post-tertiary__desc {
-  max-height: rem(48);
   margin-bottom: rem(15);
+  max-height: rem(48);
+
   font-size: rem(14);
   line-height: rem(24);
 

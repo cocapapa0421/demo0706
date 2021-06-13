@@ -1,0 +1,44 @@
+.subscribe-form__row + .subscribe-form__row {
+  margin-top: rem(10);
+
+  @include media(">=md") {
+    margin-top: rem(15);
+  }
+
+  @include media(">=xl") {
+    margin-top: rem(20);
+  }
+}
+
+.subscribe-form__input-wrapper {
+  @include flex($justify: space-between);
+  border: 2px solid rgba($color-white, 0.2);
+  border-radius: rem(28);
+  padding: rem(16) rem(20);
+}
+
+.subscribe-form__input {
+  flex: 1;
+  padding-right: rem(15);
+}
+
+.subscribe-form__icon {
+  font-size: rem(22);
+}
+
+.subscribe-form__input::placeholder {
+  color: $color-gray-4;
+}
+
+.subscribe-form__button {
+  display: block;
+
+  border-radius: rem(28);
+  width: 100%;
+  padding: rem(15) rem(15);
+  background-color: $primary-color;
+
+  font-weight: $font-bold;
+  line-height: rem(26);
+  color: $secondary-color;
+}

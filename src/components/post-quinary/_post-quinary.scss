@@ -1,8 +1,10 @@
 .post-quinary {
   @include relative;
   z-index: 1;
-  border-radius: rem(10);
+
   overflow: hidden;
+
+  border-radius: rem(10);
 
   @include media(">=md") {
     border-radius: rem(15);
@@ -18,21 +20,25 @@
 }
 
 .post-quinary__thumb:before {
-  content: "";
   @include absolute(0, 0, 0, 0);
+  content: "";
   z-index: -1;
+
   display: block;
   opacity: 0;
+
   background-image: linear-gradient(
     0deg,
     rgba($secondary-color, 0.3),
     rgba($secondary-color, 0.3)
   );
+
   transition: 0.25s ease-in-out;
 }
 
 .post-quinary:hover .post-quinary__thumb:before {
   z-index: 1;
+
   opacity: 1;
 }
 
@@ -41,11 +47,14 @@
   @include absolute(rem(15), rem(15));
   @include size(rem(34));
   z-index: 1;
+
   border-radius: 50%;
+
   background-color: transparent;
-  color: $color-white;
+
   font-size: rem(18);
   transition: all 0.25s;
+  color: $color-white;
 }
 
 .post-quinary:hover .post-quinary__bookmark {
@@ -56,23 +65,26 @@
 .post-quinary__info {
   @include absolute(null, rem(10), rem(10), rem(10));
   z-index: 1;
-  padding: rem(10) rem(10);
+
   border-radius: rem(10);
+  padding: rem(10) rem(10);
+
   background-color: $color-white;
 
   @include media(">=md") {
-    padding: rem(15) rem(15);
     border-radius: rem(15);
+    padding: rem(15) rem(15);
   }
 
   @include media(">=xl") {
-    padding: rem(20) rem(20);
     border-radius: rem(22);
+    padding: rem(20) rem(20);
   }
 }
 
 .post-quinary__info--bottom {
   bottom: rem(65);
+
   padding-top: rem(25);
 
   @include media(">=xl") {
@@ -82,10 +94,12 @@
 
 .post-quinary__info--bottom::before,
 .post-quinary__info--bottom::after {
-  content: "";
   @include absolute;
-  background: $color-white;
+  content: "";
+
   border-radius: 50%;
+
+  background: $color-white;
 }
 
 .post-quinary__info--bottom::before {
@@ -103,26 +117,33 @@
 .post-quinary__title {
   margin-bottom: rem(10);
   height: rem(46);
+
   font-size: rem(18);
 
   @include media(">=xl") {
     height: rem(52);
+
     font-size: rem(20);
   }
 }
 
 .post-quinary__category {
-  @extend %truncate-text;
   @include absolute(-#{rem(15)}, null, null, rem(20));
+  @extend %truncate-text;
   z-index: 1;
+
   display: inline-block;
+
+  border-radius: rem(17);
   width: rem(65);
   padding: rem(9) rem(5);
-  border-radius: rem(17);
+
   background-color: $primary-color;
+
   font-size: rem(13);
   font-weight: $font-medium;
   text-align: center;
+
   transition: 0.2s ease;
 }
 
@@ -144,10 +165,13 @@
 .post-quinary__author {
   @include absolute(rem(10), null, null, rem(10));
   z-index: 1;
+
+  border-radius: rem(17);
   max-width: rem(90);
   padding: 3px 10px 3px 3px;
-  border-radius: rem(17);
+
   background-color: $color-white;
+
   font-size: rem(13);
   font-weight: $font-medium;
 
@@ -163,11 +187,13 @@
 
 .post-quinary__avatar {
   @include size(rem(28));
-  flex-shrink: 0;
   z-index: 1;
+
   display: block;
-  border-radius: 50%;
+  flex-shrink: 0;
   overflow: hidden;
+
+  border-radius: 50%;
 }
 
 .post-quinary__avatar--border {

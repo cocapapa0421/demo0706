@@ -1,0 +1,32 @@
+.mob-navigation {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+
+  display: none;
+
+  overflow: hidden;
+  overflow-y: auto;
+
+  padding-top: rem(56);
+  background-color: rgba($color-black, 0.75);
+  backdrop-filter: blur(15px);
+}
+
+.mob-navigation__wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.mob-navigation.open-mobile-menu,
+.mob-navigation.open-mobile-search {
+  display: block;
+}
+
+.mob-navigation.open-mobile-menu .mob-main-menu,
+.mob-navigation.open-mobile-search .mob-search {
+  display: block;
+}

@@ -1,61 +1,109 @@
 .post-nonary {
   @include relative;
   @include flex($justify: space-between, $align: center);
-  padding: rem(10) rem(10);
+
   border-radius: rem(10);
+  padding: rem(10) rem(10);
+
   background-color: $color-white;
 
   @include media(">=sm") {
-    padding: rem(15) rem(15);
     border-radius: rem(15);
+    padding: rem(15) rem(15);
   }
 
   @include media(">=xl") {
-    padding: rem(30) rem(30);
     border-radius: rem(30);
+    padding: rem(30) rem(30);
+  }
+
+  @include media("<lg") {
+    border: 1px solid $color-gray-3;
   }
 }
 
 .post-nonary__title {
   margin-bottom: rem(10);
   height: rem(42);
+
   font-size: rem(16);
 }
 
 .post-nonary__thumb-wrapper {
   @include relative;
-  width: rem(130);
-  border-radius: rem(22);
+
   overflow: hidden;
+
+  border-radius: rem(10);
+  width: rem(100);
+
+  @include media(">=568px") {
+    width: rem(130);
+  }
+
+  @include media(">=sm") {
+    border-radius: rem(15);
+  }
+
+  @include media(">=xl") {
+    border-radius: rem(22);
+  }
 }
+
 .post-nonary__thumb {
-  padding-top: mathSizeImage(97, 130);
+  padding-top: mathSizeImage(85, 100);
+
+  @include media(">=568px") {
+    padding-top: mathSizeImage(97, 130);
+  }
 }
 
 .post-nonary__play {
   @include absolute(50%, null, null, 50%);
   @include flex(flex, null, null, center, center);
   @include size(rem(40));
+
   transform: translate(-50%, -50%);
+
   background: rgba($color-white, 0.3);
   backdrop-filter: blur(16px);
-  color: $primary-color;
+
   font-size: rem(22);
+  color: $primary-color;
 }
 
 .post-nonary__info {
-  width: calc(100% - #{rem(198)});
-  padding-right: rem(20);
-  padding-left: rem(20);
+  width: calc(100% - #{rem(100)});
+  padding-left: rem(10);
+
+  @include media(">=568px") {
+    width: calc(100% - #{rem(198)});
+    padding-right: rem(15);
+    padding-left: rem(15);
+  }
+  @include media(">=xl") {
+    padding-right: rem(20);
+    padding-left: rem(20);
+  }
+}
+
+.post-nonary__publish-box {
+  @include media("<568px") {
+    display: none;
+    visibility: hidden;
+  }
 }
 
 .post-nonary__publish {
   display: block;
+
+  border-radius: rem(22);
   margin-bottom: rem(8);
   width: rem(68);
   padding: rem(8) rem(20);
-  border-radius: rem(22);
+
   background-color: rgba($primary-color, 0.6);
+
   font-size: rem(11);
   font-weight: $font-bold;
   text-transform: uppercase;
@@ -68,15 +116,18 @@
 
 .post-nonary__detail {
   display: block;
+
+  border-radius: rem(22);
   width: rem(68);
   height: rem(32);
-  border-radius: rem(22);
+
   background-color: $secondary-color-light-1;
-  color: $primary-color;
+
   font-size: rem(20);
-  text-align: center;
   line-height: rem(32);
+  text-align: center;
   transition: 0.25s ease-in-out;
+  color: $primary-color;
 }
 
 .post-nonary__detail:hover {

@@ -1,22 +1,39 @@
 .post-meta {
-  color: $color-gray-5;
   font-size: rem(13);
   font-weight: $font-medium;
+  color: $color-gray-5;
 }
 
-.post-meta > *:not(:first-child) {
-  margin-left: rem(8);
+.post-meta > *:not(:last-child) {
+  margin-right: rem(8);
 }
 
 .post-meta__avatar {
   @include size(rem(28));
   display: block;
-  border-radius: 50%;
+
   overflow: hidden;
+
+  border-radius: 50%;
+
+  @include media("<xs") {
+    display: none;
+    opacity: 0;
+  }
+}
+
+.post-meta {
+  @media only screen and (min-width: 1024px) and (max-width: 1269px),
+    (max-width: 479px) {
+    > :nth-child(n + 3) {
+      display: none;
+      visibility: hidden;
+    }
+  }
 }
 
 .post-meta__name,
 .post-meta__category {
-  color: $secondary-color;
   font-weight: $font-bold;
+  color: $secondary-color;
 }

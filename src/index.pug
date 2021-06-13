@@ -3,6 +3,7 @@ extends core/layout
 include components/section/_section
 include components/heading/_heading
 include components/category/_category
+include components/post-plain/_post-plain
 include components/post-primary/_post-primary
 include components/post-secondary/_post-secondary
 include components/post-tertiary/_post-tertiary
@@ -11,6 +12,7 @@ include components/post-quinary/_post-quinary
 include components/post-septenary/_post-septenary
 include components/post-octonary/_post-octonary
 include components/post-nonary/_post-nonary
+include components/post-denary/_post-denary
 include components/subscribe/_subscribe
 include components/tabs/_tabs
 include components/author/_author
@@ -21,10 +23,24 @@ block stylesheet
   link(rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css")
   link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap")
 
-block header
-
-
 block content
+  +page-background()
+
+  +section().home-plain-post
+    +row().grid--huge.grid--counter
+      +col({cols: [12, 6, 6, 3]})
+        +post-plain({title: 'We denounce with righteous indignation'})
+      +col({cols: [12, 6, 6, 3]})
+        +post-plain({title: 'Denouncing pleasure and praising pain was born'})
+      +col({cols: [12, 6, 6, 3]})
+        +post-plain({title: 'At vero eos et accusamus et iusto odio dignissimos...'})
+      +col({cols: [12, 6, 6, 3]})
+        +post-plain({title: 'Nam libero tempore, cum soluta nobis est eligendi'})
+
+  //-Slider
+  +section({hasBackgroundEl: true}).section--rounded.home-slider
+    +post-denary({hasSliderButtons: true ,thumb: './images/post40.jpg', title: 'Torquem Detraxit Hosti Quidem Se Repellere'})
+
   //- Category
   +section()
     header.section__head
@@ -46,17 +62,17 @@ block content
       +heading({tag: 'h2', title: 'Recent Posts'})
 
     +row()
+      +col({cols: [12, 12, 12, 7]}).order-lg-1
+        +post-octonary({thumb: "./images/post5.jpg", title: "At vero eos et accusamus et iusto odio dignissimos ducimus"})
+
       +col({cols: [12, 12, 12, 5]})
         +row()
-          +col({cols: [12, 6, 6, 12]})
+          +col({cols: [12, 12, 12, 12]})
             +post-nonary({thumb: './images/post20.jpg', title: "Hanc ego cum teneam sententiam, quid malu…"})
-          +col({cols: [12, 6, 6, 12]})
+          +col({cols: [12, 12, 12, 12]})
             +post-nonary({thumb: './images/post21.jpg', title: "The warmest workout gear to keep"})
-          +col({cols: [12, 6, 6, 12]})
+          +col({cols: [12, 12, 12, 12]})
             +post-nonary({hasVideo: true, thumb: './images/post22.jpg', title: "Boost your immune system for winter..."})
-
-      +col({cols: [12, 12, 12, 7]})
-        +post-octonary({thumb: "./images/post5.jpg", title: "At vero eos et accusamus et iusto odio dignissimos ducimus"})
 
     +row()
       +col({cols: [12, 6, 6, 3]})
@@ -67,8 +83,6 @@ block content
          +post-quaternary({title: 'Filium morte multavit si sine causa, mox videro', avatar: './images/thumb22.jpg'})
       +col({cols: [12, 6, 6, 3]})
          +post-quaternary({title: 'Hanc ego cum teneam sententiam, quid malum', avatar: './images/thumb23.jpg'})
-
-
 
   //- Popular Posts
   +section()
@@ -91,10 +105,10 @@ block content
 
     +row()
       +col({cols: [12, 12, 12, 3 ]})
-        .post-grid
-          .post-grid__item
+        +row()
+          +col({cols: [12, 6, 6, 12]})
             +post-quaternary({title: 'Laudem et inter argumentum conclusionemque', avatar: './images/thumb15.jpg'})
-          .post-grid__item
+          +col({cols: [12, 6, 6, 12]})
             +post-quaternary({title: 'Sorry, but you can\’t copyright a meme', avatar: './images/thumb16.jpg'})
 
       +col({cols: [12, 12, 12, 6]})
@@ -105,10 +119,10 @@ block content
             +post-quinary({hasBookmark: true, thumb: './images/post13.jpg', title: 'Torquem detraxit hosti et quidem se'})
 
       +col({cols: [12, 12, 12, 3 ]})
-        .post-grid.post-grid--medium
-          .post-grid__item
+        +row()
+          +col({cols: [12, 6, 6, 12]})
             +post-quaternary({title: 'Hanc ego cum teneam sententiam, quid malum', avatar: './images/thumb17.jpg'})
-          .post-grid__item
+          +col({cols: [12, 6, 6, 12]})
             +post-quaternary({title: 'Filium morte multavit si sine causa, mox videro', avatar: './images/thumb18.jpg'})
 
   //- Top Author
@@ -137,17 +151,24 @@ block content
         +button({tag: 'a'}).button--size-xxl.button--primary.ml-10
           | Become an author
 
-
-
+  //- Banner
   +section().section--collapse-top.ads.visible-desktop
     +link()
       +img('./images/banner.jpg')
 
+  //- With Category
   +section().section--background-1.section--rounded
     header.section__head
       +heading({tag: 'h2', title: 'With Category'})
 
     +row().grid--huge
+      +col({cols: [12, 12, 12, 6]}).order-lg-1
+        +row().grid--huge
+          +col({cols: [12, 6, 6, 12]})
+            +post-tertiary({hasVideo: true, thumb: './images/post38.jpg'})
+          +col({cols: [12, 6, 6, 12]})
+            +post-tertiary({thumb: './images/post39.jpg'})
+
       +col({cols: [12, 12, 12, 3]})
         +row().grid--huge
           +col({cols: [12, 4, 4, 12]})
@@ -157,14 +178,7 @@ block content
           +col({cols: [12, 4, 4, 12]})
             +post-primary({thumb: './images/post16.jpg'})
 
-      +col({cols: [12, 12, 12, 6]})
-        +row().grid--huge
-          +col({cols: [12, 6, 6, 12]})
-            +post-tertiary({hasVideo: true, thumb: './images/post38.jpg'})
-          +col({cols: [12, 6, 6, 12]})
-            +post-tertiary({thumb: './images/post39.jpg'})
-
-      +col({cols: [12, 12, 12, 3]})
+      +col({cols: [12, 12, 12, 3]}).order-lg-2
         +row().grid--huge
           +col({cols: [12, 4, 4, 12]})
             +post-primary({thumb: './images/post17.jpg'})

@@ -1,0 +1,36 @@
+.main-menu {
+  // margin-left: rem(175);
+  margin-right: auto;
+  margin-left: auto;
+  font-size: rem(14);
+  font-weight: $font-medium;
+  line-height: rem(26);
+}
+
+.main-menu__list {
+  @include flex($align: center);
+}
+
+.main-menu__item.has-sub-menu {
+  position: relative;
+}
+
+.main-menu__link {
+  display: inline-block;
+  border-radius: rem(22);
+  padding: rem(9) rem(24);
+
+  i {
+    margin-left: 4px;
+  }
+}
+
+.main-menu__item.is-active .main-menu__link,
+.main-menu__item:hover .main-menu__link,
+.main-menu__link:active {
+  background-color: $primary-color;
+}
+
+.main-menu__item.has-sub-menu:hover > ul {
+  display: block;
+}

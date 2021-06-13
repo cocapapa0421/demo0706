@@ -16,6 +16,10 @@
   transition: 0.25s ease-in-out;
 }
 
+.button--size-m {
+  @include size(rem(22));
+}
+
 .button--size-l {
   @include size(rem(44));
   font-size: rem(20);
@@ -53,4 +57,8 @@
 
 .button--circle {
   border-radius: 50%;
+}
+
+.button--outline-gray {
+  border: 2px solid $color-gray-2;
 }
