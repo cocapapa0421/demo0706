@@ -3,6 +3,7 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
+const CSSMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
   context: path.resolve(__dirname, "./src"),
@@ -74,4 +75,11 @@ module.exports = {
       filename: "css/[name].css",
     }),
   ],
+  optimization: {
+    minimize: true,
+    minimizer: [new CssMinimizerPlugin(), "..."],
+    runtimeChunk: {
+      name: "runtime",
+    },
+  },
 };
