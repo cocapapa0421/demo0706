@@ -26,7 +26,10 @@
   display: block;
 }
 
-.mob-navigation.open-mobile-menu .mob-main-menu,
-.mob-navigation.open-mobile-search .mob-search {
+.mob-navigation.open-mobile-menu .mob-main-menu {
   display: block;
+}
+
+.mob-navigation.open-mobile-search .mob-search {
+  display: flex;
 }
