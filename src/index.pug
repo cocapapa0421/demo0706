@@ -58,8 +58,14 @@ block content
 
   //- Recent Posts
   +section().section--background-1.section--rounded
-    header.section__head
+    header.section__head.flex.flex-between-middle
       +heading({tag: 'h2', title: 'Recent Posts'})
+      +sub-cate().visible-desktop
+      div.nav-groups
+        +button().button--size-l.button--circle
+          i.las.la-angle-left
+        +button().button--size-l.button--circle
+          i.las.la-angle-right
 
     +row()
       +col({cols: [12, 12, 12, 7]}).order-lg-1
@@ -88,6 +94,12 @@ block content
   +section()
     header.section__head.flex.flex-between-middle
       +heading({tag: 'h2', title: 'Popular Posts'})
+      div.nav-groups.visible-desktop
+        +button().button--size-l.button--circle
+          i.las.la-angle-left
+        +button().button--size-l.button--circle
+          i.las.la-angle-right
+
     +row().grid--huge
       +col({cols: [12, 6, 6, 3]})
         +post-quinary({thumb: './images/post8.jpg', categoryOnTop: true, avatarOnTop: true})
@@ -102,6 +114,12 @@ block content
   +section().section--background-2.section--rounded
     header.section__head.flex.flex-between-middle
       +heading({tag: 'h2', title: 'Viewed Posts'})
+      +sub-cate().visible-desktop
+      div.nav-groups.visible-desktop
+        +button().button--size-l.button--circle
+          i.las.la-angle-left
+        +button().button--size-l.button--circle
+          i.las.la-angle-right
 
     +row()
       +col({cols: [12, 12, 12, 3 ]})

@@ -23,13 +23,14 @@ mixin list(props = {})
       className: 'list',
       items: ['List Item 1', 'List Item 2', 'List Item 3', 'List Item 4', 'List Item 5'],
       hasLink: false,
+      indexActive: null
     }
     const _props = Object.assign({}, defaultProps, props)
     const set = suffix => `${_props.className}__${suffix}`
 
   ul(class=_props.className)&attributes(attributes)
-    each item in _props.items
-      li(class=set('item'))
+    each item, idx in _props.items
+      li(class=set('item'),  class=(_props.indexActive === idx ? 'is-active' : ''))
         if _props.hasLink
           +link()(class=set('link'))=item
         else

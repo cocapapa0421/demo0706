@@ -1,0 +1,20 @@
+.sub-cate {
+  @include flex($align: center);
+
+  font-size: rem(14);
+  font-weight: $font-medium;
+}
+
+.sub-cate__link {
+  display: block;
+  border-radius: rem(22);
+  min-width: rem(64);
+  padding: rem(13) rem(15);
+  text-align: center;
+}
+
+.sub-cate__item.is-active .sub-cate__link,
+.sub-cate__item:hover .sub-cate__link {
+  background-color: $primary-color;
+  font-weight: $font-bold;
+}

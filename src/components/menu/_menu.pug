@@ -33,4 +33,15 @@ mixin menu(props = {})
             +list({className: _props.subMenuClassName, items: item.childItems, hasLink: true})
 
 
+mixin sub-cate(props = {})
+  -
+    const defaultProps = {
+      className: 'sub-cate',
+      items: ['All', 'Travel', 'Design', 'LifeStyle', 'Sport'],
+      hasLink: true,
+      indexActive: 0,
+    }
+    const _props = Object.assign({}, defaultProps, props)
+
+  +list(_props)
 

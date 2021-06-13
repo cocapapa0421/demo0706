@@ -1,10 +1,15 @@
 .mob-search {
   @include flex($justify: space-between);
   display: none;
-  padding: rem(15) rem(15);
   background-color: $primary-color;
+  padding-right: rem(15);
   mix-blend-mode: normal;
   backdrop-filter: blur(0);
+}
+
+.mob-search__input {
+  flex: 1;
+  padding: rem(15) rem(20) rem(15);
 }
 
 .mob-search__button {

@@ -1,0 +1,14 @@
+.nav-groups {
+  border-radius: rem(22);
+  padding-right: rem(5);
+  padding-left: rem(5);
+  background-color: $color-white;
+}
+
+.nav-groups > * {
+  color: $color-gray-3;
+}
+
+.nav-groups > *:hover {
+  color: $secondary-color;
+}
