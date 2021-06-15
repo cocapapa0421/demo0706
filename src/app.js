@@ -39,6 +39,7 @@ const handleSwitchMobileSearch = (e) => {
   buttonOpenMobileMenu.classList.remove("is-active");
   mobileNavigation.classList.remove("open-mobile-menu");
   mobileNavigation.classList.toggle("open-mobile-search");
+  setOverflow("hidden");
 };
 
 const handleSwitchMobileMenu = (e) => {
@@ -51,6 +52,7 @@ const handleSwitchMobileMenu = (e) => {
   buttonOpenMobileSearch.classList.remove("is-active");
   mobileNavigation.classList.remove("open-mobile-search");
   mobileNavigation.classList.toggle("open-mobile-menu");
+  setOverflow("hidden");
 };
 
 // Add Event Listener
