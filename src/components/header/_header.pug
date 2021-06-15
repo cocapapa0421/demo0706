@@ -40,12 +40,14 @@
 +component('header', 'mob-header').hidden-desktop
   .container
     .mob-header__wrapper
-      button.mob-header__button.jsOpenMobileMenu(data-mob-action="open" data-open-target='open-mobile-menu')
+      button.mob-header__button.jsOpenMobileMenu
         i.las.la-bars
+        i.las.la-times
       +link().mob-header__logo
           +img('../../images/logo.png')
-      button.mob-header__button.jsOpenMobileSearch(data-mob-action="open" data-open-target='open-mobile-search')
+      button.mob-header__button.jsOpenMobileSearch
         i.las.la-search
+        i.las.la-times
 
 +component('div', 'mob-navigation jsMobNavigation', null, false).hidden-desktop
   div.mob-navigation__wrapper
@@ -58,17 +60,28 @@
         {
           content: 'Pages',
           hasChild: true,
-          childItems: [ 'Photos', 'Movies', 'Foot ball', 'Contact' ],
-          icon: 'las la-angle-right jsMobMenuIcon',
+          childItems: [
+            {
+              content: 'Photos',
+              hasChild: true,
+              childItems: ["Abstract", "Adventure", "Architectural", "Black and White"],
+              icon: 'las la-angle-right'
+            },
+            {content: 'Movies'},
+            {
+              content: 'Sports',
+              childItems: ['Football', 'Swimming', 'Basketball', 'Baseball'],
+              hasChild: true,
+              icon: 'las la-angle-right'
+            },
+            {
+              content: 'Contact'
+            }
+          ],
+          icon: 'las la-angle-right',
         },
         { content: 'Sport' },
         { content: 'LifeStyle' },
         { content: 'Design' },
-        {
-          content: 'Contact Us',
-          hasChild: true,
-          childItems: [ 'Photos', 'Movies', 'Foot ball', 'Contact' ],
-          icon: 'las la-angle-right',
-        },
       ],
     }).jsMobMainMenu

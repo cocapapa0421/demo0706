@@ -1,10 +1,10 @@
 .sub-menu {
   position: absolute;
-  top: calc(100% + 1px);
-  left: 0;
+  z-index: 5;
+  top: 0;
+  left: 100%;
 
   display: none;
-  overflow: hidden;
 
   box-shadow: 5px 5px 10px rgba($color-black, 0.1);
   border: thin solid $color-gray-3;
@@ -15,18 +15,34 @@
   backdrop-filter: blur(100px);
 }
 
-.sub-menu__link {
+.sub-menu__item {
+  position: relative;
+}
+
+.sub-menu__item:hover > .sub-menu {
   display: block;
-  padding: rem(10) rem(10) rem(10) rem(15);
+}
+
+.sub-menu__link {
+  position: relative;
+  display: block;
+  padding: rem(10) rem(20) rem(10) rem(15);
 
   transition: padding-left 0.25s ease;
+
+  > i {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translate3d(0, -50%, 0);
+  }
 }
 
 .sub-menu__item:not(:first-child) .sub-menu__link {
   border-top: thin dashed $color-gray-3;
 }
 
-.sub-menu__item:hover .sub-menu__link {
+.sub-menu__item:hover > .sub-menu__link {
   padding-left: rem(20);
   background-color: $primary-color;
 }

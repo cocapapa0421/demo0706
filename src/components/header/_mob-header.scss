@@ -24,3 +24,16 @@
   font-weight: $font-bold;
   color: $secondary-color;
 }
+
+.mob-header__button .la-times {
+  display: none;
+}
+
+.mob-header__button.is-active .la-times {
+  display: block;
+}
+
+.mob-header__button.is-active .la-search,
+.mob-header__button.is-active .la-bars {
+  display: none;
+}

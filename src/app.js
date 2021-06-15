@@ -8,45 +8,52 @@ const buttonOpenMobileMenu = document.querySelector(".jsOpenMobileMenu");
 const buttonOpenMobileSearch = document.querySelector(".jsOpenMobileSearch");
 
 // Helper function
-const setOverflowHidden = (val) =>
-  (document.documentElement.style.overflow = val);
+const setOverflow = (val) => (document.documentElement.style.overflow = val);
 
 // Handler Function
 const handleSwitchMobileSubMenu = function (e) {
   const target = e.target;
+  const liElement = target.closest("li");
 
-  if (!target.classList.contains("mob-main-menu__link")) return;
+  if (!liElement) return;
 
-  const hasSubMenu = target.closest("li.has-sub-menu");
-
-  if (!hasSubMenu) return;
-  e.preventDefault();
-  this.querySelectorAll(".mob-main-menu__item").forEach((el) => {
-    if (el !== hasSubMenu) el.classList.remove("is-active");
+  [...liElement.parentElement.children].forEach((element) => {
+    if (element !== liElement) element.classList.remove("is-active");
   });
-  hasSubMenu.classList.toggle("is-active");
+
+  liElement.classList.toggle("is-active");
+
+  const icon = liElement.classList.contains("is-active")
+    ? "las la-angle-down"
+    : "las la-angle-right";
+  liElement.querySelector("i").className = icon;
 };
 
-const handleSwitchMobileNavigation = (e) => {
-  const button = e.target.closest(".mob-header__button");
-  const action = button.dataset.mobAction;
-  const openTarget = button.dataset.openTarget;
+const handleSwitchMobileSearch = (e) => {
+  const target = e.target;
+  const button = target.closest(".jsOpenMobileSearch");
 
-  openTarget === "open-mobile-menu"
-    ? mobileNavigation.classList.remove("open-mobile-search")
-    : mobileNavigation.classList.remove("open-mobile-menu");
-  if (!action || !openTarget) return;
+  if (!button) return;
 
-  let icon = action === "open" ? "la-times" : "la-bars";
+  button.classList.toggle("is-active");
+  buttonOpenMobileMenu.classList.remove("is-active");
+  mobileNavigation.classList.remove("open-mobile-menu");
+  mobileNavigation.classList.toggle("open-mobile-search");
+};
 
-  action === "open" ? setOverflowHidden("hidden") : setOverflowHidden("unset");
-  button.querySelector("i").classList.remove("la-bars", "la-times");
-  button.querySelector("i").classList.add(icon);
-  button.dataset.mobAction = action === "open" ? "close" : "open";
-  mobileNavigation.classList.toggle(openTarget);
+const handleSwitchMobileMenu = (e) => {
+  const target = e.target;
+  const button = target.closest(".jsOpenMobileMenu");
+
+  if (!button) return;
+
+  button.classList.toggle("is-active");
+  buttonOpenMobileSearch.classList.remove("is-active");
+  mobileNavigation.classList.remove("open-mobile-search");
+  mobileNavigation.classList.toggle("open-mobile-menu");
 };
 
 // Add Event Listener
 mobileMenu.addEventListener("click", handleSwitchMobileSubMenu);
-buttonOpenMobileMenu.addEventListener("click", handleSwitchMobileNavigation);
-buttonOpenMobileSearch.addEventListener("click", handleSwitchMobileNavigation);
+buttonOpenMobileMenu.addEventListener("click", handleSwitchMobileMenu);
+buttonOpenMobileSearch.addEventListener("click", handleSwitchMobileSearch);

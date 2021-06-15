@@ -24,6 +24,6 @@
   border-bottom: 1px solid darken($color-gray-2, 5%);
 }
 
-.mob-main-menu__item.is-active .mob-sub-menu {
+.mob-main-menu__item.is-active > ul {
   display: block;
 }

@@ -4,10 +4,27 @@
   border-bottom: 1px solid darken($color-gray-2, 5%);
 }
 
-.mob-sub-menu__link {
+.mob-sub-menu ul {
+  padding-left: rem(25);
+  border-top: 1px solid darken($color-gray-2, 5%);
+}
+
+.mob-sub-menu__item.is-active > ul {
   display: block;
-  padding: rem(10) rem(25) rem(10) rem(40);
+}
+
+.mob-sub-menu__link {
+  position: relative;
+  display: block;
+  padding: rem(10) rem(25) rem(10) rem(30);
   font-size: rem(16);
+
+  > i {
+    position: absolute;
+    right: rem(15);
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+  }
 }
 
 .mob-sub-menu__link::before {
@@ -15,4 +32,8 @@
   margin-right: rem(5);
   font-family: "Line Awesome Free";
   font-weight: 900;
+}
+
+.mob-sub-menu ul .mob-sub-menu__link::before {
+  content: "\f0da";
 }

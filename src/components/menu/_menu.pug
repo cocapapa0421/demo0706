@@ -8,7 +8,24 @@ mixin menu(props = {})
         {
           content: 'Pages',
           hasChild: true,
-          childItems: [ 'Photos', 'Movies', 'Foot ball', 'Contact' ],
+          childItems: [
+            {
+              content: 'Photos',
+              hasChild: true,
+              childItems: ["Abstract", "Adventure", "Architectural", "Black and White"],
+              icon: 'las la-angle-right'
+            },
+            {content: 'Movies'},
+            {
+              content: 'Sports',
+              childItems: ['Football', 'Swimming', 'Basketball', 'Baseball'],
+              hasChild: true,
+              icon: 'las la-angle-right'
+            },
+            {
+              content: 'Contact'
+            }
+          ],
           icon: 'las la-angle-down',
         },
         { content: 'Sport' },
@@ -30,7 +47,7 @@ mixin menu(props = {})
               i(class=item.icon)
 
           if item.hasChild && item.childItems
-            +list({className: _props.subMenuClassName, items: item.childItems, hasLink: true})
+            +nested-list({className: _props.subMenuClassName, items: item.childItems})
 
 
 mixin sub-cate(props = {})

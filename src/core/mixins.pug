@@ -35,3 +35,45 @@ mixin list(props = {})
           +link()(class=set('link'))=item
         else
           =item
+
+mixin nested-list(props = {})
+  -
+    const defaultProps = {
+      className: 'list',
+      items: [
+        {content: 'Home'},
+        {content: 'Products'},
+        {
+          content: 'Sport',
+          hasChild: true,
+          childItems: ['Football', 'Swimming', 'Basketball', 'Baseball'],
+          icon: 'las las-angle-right'
+        },
+        {content: 'Movie'},
+        {content: 'Shopping'},
+      ],
+      hasLink: true,
+      indexActive: null
+    }
+
+    const _props = Object.assign({}, defaultProps, props)
+    const set = suffix => `${_props.className}__${suffix}`
+
+  ul(class=_props.className)&attributes(attributes)
+    each item, idx in _props.items
+      li(class=set('item'),  class=(_props.indexActive === idx ? 'is-active' : ''), class=item.hasChild? 'has-sub-menu' : '')
+        if _props.hasLink
+          +link()(class=set('link'))=item.content
+            if item.icon
+              i(class=item.icon)
+        else
+          =item.content
+
+        if item.childItems
+          ul(class=_props.className)
+            each child in item.childItems
+              li(class=set('item'))
+                if _props.hasLink
+                  +link()(class=set('link'))=child
+                else
+                  =child
